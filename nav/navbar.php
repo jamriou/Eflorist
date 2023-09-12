@@ -1,10 +1,13 @@
 <?php
 /*session_start();*/
-  include "./locales/navbar_locales.php";
-  if(!isset($_SESSION["isAdmin"])){
-    $_SESSION["isAdmin"]= "false";
-  }
-  ?>
+include "./locales/navbar_locales.php";
+if(!isset($_SESSION["isAdmin"])){
+   $_SESSION["isAdmin"] = false;
+}
+if(!isset($_SESSION['authenticated'])){
+  $_SESSION["isAdmin"] = false;
+}
+?>
 
 <h1 class="logo mr-auto"><a href="index.php">eFlorist</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
