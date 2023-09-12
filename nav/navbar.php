@@ -1,6 +1,9 @@
 <?php
 /*session_start();*/
   include "./locales/navbar_locales.php";
+  if(!isset($_SESSION["isAdmin"])){
+    $_SESSION["isAdmin"]= "false";
+  }
   ?>
 
 <h1 class="logo mr-auto"><a href="index.php">eFlorist</a></h1>
