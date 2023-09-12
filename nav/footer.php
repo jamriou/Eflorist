@@ -4,7 +4,7 @@
 ?>
 <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>eFlorist</span></strong>. All Rights Reserved
+        <strong><span>eFlorist</span></strong>. All names, locations, and checkouts in this production are fictitious. No identification with actual places and products is intended or should be inferred.
       </div>
       <div class="credits">
         <?php
