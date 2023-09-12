@@ -1,4 +1,5 @@
 # Eflorist
+
 ### By James Leute
 
 A WIP website where I showcase my web development capabilities. This website has full sign-up, logon, checkout and administrative functionalities. 
