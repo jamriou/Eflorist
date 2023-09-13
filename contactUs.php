@@ -82,10 +82,8 @@ include "locales/contactUs_locales.php";
     </section><!-- End Contact Section -->
 
   <!-- ======= Footer ======= -->
-  <footer class="mt-auto" id="footer">
-
+  <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
-
   </footer><!-- End Footer -->
 
 </body>
