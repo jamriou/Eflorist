@@ -151,25 +151,7 @@ $_SESSION['added'] = false;
 
   <!-- ======= Footer =======  -->
 
-  <footer id="footer">
-
-    <div class="footer-top">
-
-      <div class="container">
-
-        <h3>eFlorist<h3>
-        <h4><?=$findUs[$_SESSION['language']]?> <h4>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <br>
-        <a href="#" class=""><i class="icofont-simple-up"></i></a>   
-      </div>
-    </div>
-
+  <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 </body>
