@@ -16,10 +16,6 @@ a:hover {
   text-decoration: none;
 }
 
-.green-background {
-  color: #6ad83f;
-}
-
 h1,
 h2,
 h3,
@@ -118,6 +114,7 @@ h6 {
 .nav-menu a {
   display: block;
   position: relative;
+  text-align: right;
   color: #5f687b;
   transition: 0.3s;
   font-size: 14px;
@@ -211,7 +208,6 @@ h6 {
 
 /* Get Startet Button */
 .login-btn {
-  margin-left: 25px;
   background: #6ad83f;
   box-shadow: 0 8px 28px rgba(32, 255, 69, 0.45);
   color: #fff;
