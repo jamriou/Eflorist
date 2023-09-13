@@ -187,11 +187,13 @@ if($categoryPlant =="cacti") {
           </div>
         </div>
       </div>
-      <div class="container">
-      <br><br> 
-        <h2><?=$pro[$_SESSION['language']]?></h2>
+      <div id="footer" class="container">
+        <div class="footer-top">
+          <br><br> 
+          <h2><?=$pro[$_SESSION['language']]?></h2>
 
-        <h3><?=$tip[$_SESSION['language']]?></h3>
+          <h3><?=$tip[$_SESSION['language']]?></h3>
+        </div>
       </div>
     </section><!-- End Contact Section -->
 
@@ -201,7 +203,7 @@ if($categoryPlant =="cacti") {
   <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
-  
+
 </body>
 
 </html>

@@ -136,11 +136,13 @@ if(time()-$_SESSION['timeOut'] > 1000)
           </div>
         </div>
       </div>
-      <div class="container">
-        <br><br> 
-        <h2><?=$pro[$_SESSION['language']]?></h2>
+      <div id="footer" class="container">
+        <div class="footer-top">
+          <br><br> 
+          <h2><?=$pro[$_SESSION['language']]?></h2>
 
-        <h3><?=$tip[$_SESSION['language']]?></h3>
+          <h3><?=$tip[$_SESSION['language']]?></h3>
+        </div>
       </div>
     </section><!-- End Contact Section -->
 
