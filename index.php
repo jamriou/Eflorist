@@ -78,7 +78,7 @@ $_SESSION['added'] = false;
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services" style="padding: 15px;">
       <div class="container">
 
         <div class="row">

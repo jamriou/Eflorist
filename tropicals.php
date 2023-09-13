@@ -108,7 +108,7 @@ while($row = $stmt->fetch()){
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services" style="padding: 15px;">
       <div class="container">
         <?php if($_SESSION['successDeleteTropical']) { ?>
         <div class="alert alert-success">
