@@ -29,25 +29,23 @@ $_SESSION['added'] = false;
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
 
+  <!-- Main Scripts -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="js/main.js" async></script>
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
       <?php include "nav/navbar.php"; ?>
-
-    </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -66,7 +64,7 @@ $_SESSION['added'] = false;
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
           <div class="d-flex">
-            <a href="tropicals.php" class="btn-get-started scrollto"><?=$h1Button[$_SESSION['language']]?></a>
+            <a href="tropicals.php" class="text-decoration-none btn-get-started"><?=$h1Button[$_SESSION['language']]?></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -87,21 +85,21 @@ $_SESSION['added'] = false;
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-plant"></i></div>
-              <h4 class="title"><a href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a class="text-decoration-none" href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="icofont-crop-plant"></i></div>
-              <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a class="text-decoration-none" href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="icofont-egg-plant"></i></div>
-              <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a class="text-decoration-none" href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$outdoorsDef[$_SESSION['language']]?></p>
             </div>
           </div>
@@ -166,17 +164,13 @@ $_SESSION['added'] = false;
           <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
+        <br>
+        <a href="#" class=""><i class="icofont-simple-up"></i></a>   
       </div>
     </div>
-    
+
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>   
-
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="js/main.js"></script>
-
 </body>
 
 </html>

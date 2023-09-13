@@ -68,25 +68,24 @@ while($row = $stmt->fetch()){
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
 
+  <!-- Main Scripts -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="js/main.js" async></script>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
       <?php include "nav/navbar.php"; ?>
-
-    </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -156,36 +155,35 @@ while($row = $stmt->fetch()){
       </div>
     </section><!-- End Featured Services Section -->
 
-
     <!-- Pagination section -->
-    <div class="row" style="padding-bottom: 25px">
+    <div class="row" style="padding-bottom: 25px;">
+      <div class="container d-flex justify-content-center">
+        <ul class="pagination my-auto mx-auto">
+        <?php 
+        $previous = $_GET["page"] - 1;
+        if($_GET["page"] - 1 < 1) 
+          $previous = 1;
 
-      <ul class="pagination my-auto mx-auto">
-      <?php 
-      $previous = $_GET["page"] - 1;
-      if($_GET["page"] - 1 < 1) 
-        $previous = 1;
+        $next = $_GET["page"] + 1;
+        if($_GET["page"] + 1 >= ceil(count($tropicalName)/$plant)) 
+          $next = ceil(count($tropicalName)/$plant);
+        if($_GET["page"] > 1) 
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./tropicals.php?page=$previous'><<</a></li>";
 
-      $next = $_GET["page"] + 1;
-      if($_GET["page"] + 1 >= ceil(count($tropicalName)/$plant)) 
-        $next = ceil(count($tropicalName)/$plant);
-      if($_GET["page"] > 1) 
-        echo "<li class=\"page-item\"><a class=\"page-link\" href='./tropicals.php?page=$previous'><<</a></li>";
+        for($i = 1; $i <= ceil(count($tropicalName)/$plant); $i++){   
+          $active = "";
+          if(($_GET["page"] == $i)) 
+            $active = "active";
+          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./tropicals.php?page=$i'>$i</a></li>";
+        } 
 
-      for($i = 1; $i <= ceil(count($tropicalName)/$plant); $i++){   
-        $active = "";
-        if(($_GET["page"] == $i)) 
-          $active = "active";
-        echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./tropicals.php?page=$i'>$i</a></li>";
-      } 
-
-      if($_GET["page"] == ceil(count($tropicalName)/$plant) -1 ) 
-        echo "<li class=\"page-item\"><a class=\"page-link\" href='./tropicals.php?page=$next'>>></a></li>";
-      ?>
-      </ul>
-      </br>
+        if($_GET["page"] == ceil(count($tropicalName)/$plant) -1 ) 
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./tropicals.php?page=$next'>>></a></li>";
+        ?>
+        </ul>
+        </br>
+      </div>
     </div>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -194,8 +192,6 @@ while($row = $stmt->fetch()){
     <?php include "nav/footer.php"; ?>
 
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 </body>
 
