@@ -3,9 +3,9 @@ $home = array(
     "en"=>"Home",
     "fr"=>"Acceuil"
 );
-$about = array(
-    "en"=>"About Us",
-    "fr"=>"A propros de nous"
+$contactUs = array(
+    "en"=>"Contact us",
+    "fr"=>"Contacter nous"
 );
 $cart= array(
     "en"=>"Your Cart", 

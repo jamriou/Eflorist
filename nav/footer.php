@@ -20,7 +20,7 @@
             <h5 class="mb-3"><strong><span><?=$quickLinks[$_SESSION['language']]?></span></strong></h5>
             <ul class="list-unstyled text-muted">
                 <li><a href="index.php"><?=$home[$_SESSION['language']]?></a></li>
-                <li><a href="#"><?=$about[$_SESSION['language']]?></a></li>
+                <li><a href="contactUs.php"><?=$contactUs[$_SESSION['language']]?></a></li>
                 <li><a href="cart.php"><?=$cart[$_SESSION['language']]?></a></li>
                 <li>
                     <?php

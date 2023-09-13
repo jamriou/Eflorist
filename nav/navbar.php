@@ -42,10 +42,6 @@ if(!isset($_SESSION['authenticated'])){
             <a class="nav-link" href="cart.php"><?=$cart[$_SESSION['language']]?></a>
             <!-- <img src="img/cart.png" width="20" height="20"> -->
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="cart.php"><?=$cart[$_SESSION['language']]?></a>
-            <!-- <img src="img/cart.png" width="20" height="20"> -->
-        </li>
       </ul>
       <form class="nav-menu" style="float: right;">
       <?php 
