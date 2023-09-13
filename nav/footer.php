@@ -2,7 +2,7 @@
 /*session_start();*/
   include "./locales/footer_locales.php";
 ?>
-<!-- FOOTER -->>
+<!-- FOOTER -->
 <div class="container">
     <div class="row">
         <div class="col-lg-4 col-md-6">
@@ -16,7 +16,7 @@
             <?php } ?>
             <!--<p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Bootstrapious.com</a></p>-->
         </div>
-        <div class="col-lg-2 col-md-6">
+        <div class="col-lg-2 col-md-6" style="text-align: center;">
             <h5 class="mb-3"><strong><span><?=$quickLinks[$_SESSION['language']]?></span></strong></h5>
             <ul class="list-unstyled text-muted">
                 <li><a href="index.php"><?=$home[$_SESSION['language']]?></a></li>
