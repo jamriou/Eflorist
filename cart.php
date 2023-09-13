@@ -13,13 +13,20 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
+if(!isset($_SESSION["checkedOut"])){
+  $_SESSION["checkedOut"]= false;
+}
+$email = $_SESSION['email'];
+if(!isset($_SESSION["email"])){
+  $_SESSION["email"] = null;
+}
+
 
 $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
 
 $plantName = array();
 $category = array();
-$email = $_SESSION['email'];
 $totalPlant = 0.00;
 
 $stmt = $pdo->prepare("SELECT plantName, category FROM dbo.cart WHERE email = ?");
@@ -48,25 +55,24 @@ while($row = $stmt->fetch()){
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-
+  
+  <!-- Main Scripts -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="js/main.js" async></script>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" style="padding-top: 10px;">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <?php include "nav/navbar.php"; ?>
-
-    </div>
+    <?php include "nav/navbar.php"; ?>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -239,8 +245,6 @@ while($row = $stmt->fetch()){
     <?php include "nav/footer.php"; ?>
 
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 </body>
 

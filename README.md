@@ -1,4 +1,4 @@
-# Eflorist
+# eFlorist
 
 ### By James Leute
 
