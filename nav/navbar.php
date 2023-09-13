@@ -38,19 +38,24 @@ if(!isset($_SESSION['authenticated'])){
         <li class="nav-item">
           <a class="nav-link" href="outdoors.php?page=1"><?=$outdoors[$_SESSION['language']]?></a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="cart.php"><?=$cart[$_SESSION['language']]?></a>
+            <!-- <img src="img/cart.png" width="20" height="20"> -->
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="cart.php"><?=$cart[$_SESSION['language']]?></a>
             <!-- <img src="img/cart.png" width="20" height="20"> -->
         </li>
       </ul>
+      <form class="nav-menu" style="float: right;">
       <?php 
         if(!isset($_SESSION['authenticated'])) {?>
-        <a href="login.php" class="text-decoration-none login-btn"><?=$login[$_SESSION['language']]?></a>
+        <a href="login.php" style="float: right;" class="text-decoration-none login-btn"><?=$login[$_SESSION['language']]?></a>
         <?php }
         if(isset($_SESSION['authenticated'])) {?>
         <a href="scripts/logout.php" class="text-decoration-none login-btn"><?=$logout[$_SESSION['language']]?></a>
         <?php } ?>
+        </form>
     </div>
   </div>
 </nav>

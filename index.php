@@ -38,7 +38,7 @@ $_SESSION['added'] = false;
   <link href="css/index.css" rel="stylesheet">
 
   <!-- Main Scripts -->
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
   <script src="js/main.js" async></script>
 </head>
 
@@ -64,7 +64,7 @@ $_SESSION['added'] = false;
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
           <div class="d-flex">
-            <a href="tropicals.php" class="text-decoration-none btn-get-started"><?=$h1Button[$_SESSION['language']]?></a>
+            <a href="tropicals.php" class="btn-get-started"><?=$h1Button[$_SESSION['language']]?></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -78,28 +78,28 @@ $_SESSION['added'] = false;
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services" style="padding: 15px;">
       <div class="container">
 
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-plant"></i></div>
-              <h4 class="title"><a class="text-decoration-none" href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="icofont-crop-plant"></i></div>
-              <h4 class="title"><a class="text-decoration-none" href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="icofont-egg-plant"></i></div>
-              <h4 class="title"><a class="text-decoration-none" href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
+              <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$outdoorsDef[$_SESSION['language']]?></p>
             </div>
           </div>
