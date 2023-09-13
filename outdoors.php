@@ -172,17 +172,17 @@ while($row = $stmt->fetch()){
         if($_GET["page"] + 1 >= ceil(count($outdoorName)/$plant)) 
           $next = ceil(count($outdoorName)/$plant);
         if($_GET["page"] > 1) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$previous'><<</a></li>";
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./outdoors.php?page=$previous'><<</a></li>";
 
         for($i = 1; $i <= ceil(count($outdoorName)/$plant); $i++){   
           $active = "";
           if(($_GET["page"] == $i)) 
             $active = "active";
-          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./cacti.php?page=$i'>$i</a></li>";
+          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./outdoors.php?page=$i'>$i</a></li>";
         } 
 
         if($_GET["page"] == ceil(count($outdoorName)/$plant) -1 ) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$next'>>></a></li>";
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./outdoors.php?page=$next'>>></a></li>";
         ?>
         </ul>
         </br>
