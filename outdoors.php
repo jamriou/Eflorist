@@ -13,6 +13,9 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
+if(!isset($_SESSION["successDeleteGarden"])){
+  $_SESSION["successDeleteCacti"]= false;
+}
 
 if(isset($_SESSION['fromAddCartScript'])){
   if($_SESSION['fromAddCartScript']) {

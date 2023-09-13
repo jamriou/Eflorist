@@ -13,10 +13,10 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
-
-if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+if(!isset($_SESSION["successDeleteTropical"])){
+  $_SESSION["successDeleteCacti"]= false;
 }
+
 
 if(isset($_SESSION['fromAddCartScript'])){
   if($_SESSION['fromAddCartScript']) {
@@ -31,7 +31,6 @@ if(isset($_SESSION['fromAddCartScript'])){
 
 $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
-$_SESSION['successDeleteTropical'] = false;
 $_SESSION['successDeleteCacti'] = false;
 $_SESSION['successDeleteGarden'] = false;
 
