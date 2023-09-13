@@ -39,6 +39,7 @@ $_SESSION['added'] = false;
 
   <!-- Main Scripts -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="vendor/jquery/jquery.min.js"defer></script>
   <script src="js/main.js" async></script>
 </head>
 
