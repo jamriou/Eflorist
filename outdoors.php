@@ -13,6 +13,9 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
+if(!isset($_SESSION["successDeleteGarden"])){
+  $_SESSION["successDeleteCacti"]= false;
+}
 
 if(isset($_SESSION['fromAddCartScript'])){
   if($_SESSION['fromAddCartScript']) {
@@ -72,8 +75,9 @@ while($row = $stmt->fetch()){
   <link href="css/index.css" rel="stylesheet">
   
   <!-- Main Scripts -->
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
-  <script src="js/main.js" async></script>
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
+  <script src="js/main.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -168,17 +172,17 @@ while($row = $stmt->fetch()){
         if($_GET["page"] + 1 >= ceil(count($outdoorName)/$plant)) 
           $next = ceil(count($outdoorName)/$plant);
         if($_GET["page"] > 1) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$previous'><<</a></li>";
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./outdoors.php?page=$previous'><<</a></li>";
 
         for($i = 1; $i <= ceil(count($outdoorName)/$plant); $i++){   
           $active = "";
           if(($_GET["page"] == $i)) 
             $active = "active";
-          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./cacti.php?page=$i'>$i</a></li>";
+          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./outdoors.php?page=$i'>$i</a></li>";
         } 
 
         if($_GET["page"] == ceil(count($outdoorName)/$plant) -1 ) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$next'>>></a></li>";
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./outdoors.php?page=$next'>>></a></li>";
         ?>
         </ul>
         </br>
@@ -187,10 +191,8 @@ while($row = $stmt->fetch()){
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-
+  <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
-
   </footer><!-- End Footer -->
 
 </body>

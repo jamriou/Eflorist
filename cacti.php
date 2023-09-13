@@ -13,6 +13,9 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
+if(!isset($_SESSION["successDeleteCacti"])){
+  $_SESSION["successDeleteCacti"]= false;
+}
 
 if(isset($_SESSION['fromAddCartScript'])){
   if($_SESSION['fromAddCartScript']) {
@@ -72,8 +75,9 @@ while($row = $stmt->fetch()){
   <link href="css/index.css" rel="stylesheet">
   
   <!-- Main Scripts -->
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
-  <script src="js/main.js" async></script>
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
+  <script src="js/main.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -188,7 +192,7 @@ while($row = $stmt->fetch()){
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 

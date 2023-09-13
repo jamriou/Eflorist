@@ -38,8 +38,9 @@ $_SESSION['added'] = false;
   <link href="css/index.css" rel="stylesheet">
 
   <!-- Main Scripts -->
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
-  <script src="js/main.js" async></script>
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
+  <script src="js/main.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -108,67 +109,11 @@ $_SESSION['added'] = false;
       </div>
     </section><!-- End Featured Services Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <span><?=$contact[$_SESSION['language']]?></span>
-          <h2><?=$contact[$_SESSION['language']]?></h2>
-          <p><?=$contactDef[$_SESSION['language']]?></p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4><?=$location[$_SESSION['language']]?></h4>
-                <p>7 Flower Street, Maroubra NSW 2035, Australia</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4><?=$email[$_SESSION['language']]?></h4>
-                <p>eflorist@support.ca</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4><?=$call[$_SESSION['language']]?></h4>
-                <p>+1 eFl-orist</p>
-              </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.070666448763!2d151.24601251596695!3d-33.93931053015491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b23327945833%3A0x64573080384149c5!2s7%20Flower%20St%2C%20Maroubra%20NSW%202035%2C%20Australia!5e0!3m2!1sen!2sca!4v1621894638082!5m2!1sen!2sca" width="100%" height="290px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer =======  -->
 
-  <footer id="footer">
-
-    <div class="footer-top">
-
-      <div class="container">
-
-        <h3>eFlorist<h3>
-        <h4><?=$findUs[$_SESSION['language']]?> <h4>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/james-l-164466250" target="_blank" rel="noreferrer noopener" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <br>
-        <a href="#" class=""><i class="icofont-simple-up"></i></a>   
-      </div>
-    </div>
-
+  <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 </body>

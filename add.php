@@ -42,13 +42,18 @@ if(time()-$_SESSION['timeOut'] > 1000)
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
+
+  <!-- Main Scripts -->
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
+  <script src="js/main.js" type="text/javascript" async></script>
 
 </head>
 
@@ -131,28 +136,22 @@ if(time()-$_SESSION['timeOut'] > 1000)
           </div>
         </div>
       </div>
+      <div id="footer" class="container">
+        <div class="footer-top">
+          <br><br> 
+          <h2><?=$pro[$_SESSION['language']]?></h2>
+
+          <h3><?=$tip[$_SESSION['language']]?></h3>
+        </div>
+      </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-
-      <div class="container">
-
-        <br><br> 
-        <h2><?=$pro[$_SESSION['language']]?></h2>
-  
-        <h3><?=$tip[$_SESSION['language']]?></h3>
-      </div>
-    </div>
-
     <?php include "nav/footer.php"; ?>
-
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 </body>
 

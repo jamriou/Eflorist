@@ -3,35 +3,32 @@ $home = array(
     "en"=>"Home",
     "fr"=>"Acceuil"
 );
-$tropicals= array(
-    "en"=>"Tropicals",
-    "fr"=>"Tropicales");
-$cacti= array(
-    "en"=>"Cacti", 
-    "fr"=>"Cactus"
-);
-$outdoors= array(
-    "en"=>"Garden", 
-    "fr"=>"Jardin"
-);
-$add= array(
-    "en"=>"Add a plant", 
-    "fr"=>"Ajouter une plante"
+$contactUs = array(
+    "en"=>"Contact us",
+    "fr"=>"Contacter nous"
 );
 $cart= array(
     "en"=>"Your Cart", 
     "fr"=>"Panier"
 );
-$login= array(
-    "en"=>"Login", 
-    "fr"=>"Connexion"
+$quickLinks= array(
+    "en"=>"Quick Links", 
+    "fr"=>"Liens Rapide"
 );
-$logout= array(
-    "en"=>"Logout", 
-    "fr"=>"Déconnexion"
+$socials= array(
+    "en"=>"Socials", 
+    "fr"=>"Réseaux sociaux"
 );
-$welcome= array(
-    "en"=>"Welcome", 
-    "fr"=>"Bienvenue"
+$newsletter= array(
+    "en"=>"Newsletter", 
+    "fr"=>"Infolettre"
+);
+$newsletterText= array(
+    "en"=>"Our newsletter is currently unavailable. Please come back a later time.", 
+    "fr"=>"Notre infolettre est actuellement indisponible. Veuillez revenir plus tard."
+);
+$allPersonsFictitiousDisclaimer = array(
+    "en"=>"All names, locations, and checkouts in this production are fictitious. No identification with actual places and products is intended or should be inferred.", 
+    "fr"=>"Tous les noms, lieux et caisses de cette production sont fictifs. Aucune identification avec des lieux et des produits réels n’est prévue ou ne devrait être déduite."
 );
 ?>
