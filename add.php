@@ -51,9 +51,9 @@ if(time()-$_SESSION['timeOut'] > 1000)
   <link href="css/index.css" rel="stylesheet">
 
   <!-- Main Scripts -->
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" async></script>
-  <script src="vendor/jquery/jquery.min.js"async></script>
-  <script src="js/main.js" async></script>
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
+  <script src="js/main.js" type="text/javascript" async></script>
 
 </head>
 
