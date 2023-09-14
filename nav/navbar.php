@@ -11,9 +11,9 @@ if(!isset($_SESSION['authenticated'])){
 <header id="header" class="header d-flex align-items-center">
 
 <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-  <a href="index.html" class="logo d-flex align-items-center">
+  <a href="index.php" class="logo d-flex align-items-center">
     <!-- Uncomment the line below if you also wish to use an image logo -->
-    <!-- <img src="assets/img/logo.png" alt=""> -->
+    <img src="img/Logo.png" alt="">
     <h1><span>eFlorist</span></h1>
   </a>
   <nav id="navbar" class="navbar">
@@ -42,8 +42,8 @@ if(!isset($_SESSION['authenticated'])){
     </ul>
   </nav><!-- .navbar -->
 
-  <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  <i class="mobile-nav-toggle mobile-nav-show bi bi-caret-left-square"></i>
+  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-caret-right-square"></i>
 
 </div>
 </header><!-- End Header -->

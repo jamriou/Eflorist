@@ -149,7 +149,7 @@ h6 {
 }
 
 .header .logo h1 span {
-  color: #444444;
+  color: #ffffff;
 }
 
 .sticked-header-offset {
@@ -331,7 +331,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(15, 131, 0, 0.9);
+    background: #6ad83fa9;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -397,7 +397,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(255, 255, 255);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -459,7 +459,7 @@ section {
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1);
   font-weight: 400;
   margin-bottom: 30px;
 }
@@ -474,13 +474,13 @@ section {
   border-radius: 50px;
   transition: 0.3s;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero .btn-get-started:hover {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 640px) {
@@ -513,8 +513,9 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #189200;
-  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-color: #30c730;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -530,7 +531,7 @@ section {
 }
 
 .hero .icon-box .title a {
-  color: #fff;
+  color: #6ad83f;
   transition: 0.3s;
 }
 
@@ -541,11 +542,11 @@ section {
   transition: all 0.3s ease-in-out;
   font-size: 48px;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.6);
+  color: #6ad83f;
 }
 
 .hero .icon-box:hover {
-  background: #009744;
+  background: #6ad83f;
 }
 
 .hero .icon-box:hover .title a,
@@ -882,10 +883,14 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-
+.footer {
+  font-size: 14px;
+  padding: 50px 0;
+  color: white;
+}
 #footer {
   background-color: #f3f4f6;
-  color: #5f687b;
+  color: #6ad83f;
   font-size: 14px;
   position: relative;
   bottom: 0;

@@ -57,8 +57,8 @@ $_SESSION['added'] = false;
             <a href="tropicals.php?page=1" class="btn-get-started">Our most popular plants</a>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        <div class="col-lg-6 order-1 order-lg-2 text-center">
+          <img src="img/Logo.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
         </div>
       </div>
     </div>
@@ -117,9 +117,6 @@ $_SESSION['added'] = false;
           <h1><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</h1>
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="tropicals.php?page=1" class="btn-get-started">Our most popular plants</a>
-          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="img/plant.gif" class="img-fluid animated" alt="">
@@ -135,7 +132,7 @@ $_SESSION['added'] = false;
 
   <!-- ======= Footer =======  -->
 
-  <footer id="footer" class="w-100 py-4 flex-shrink-0 fixed-bottom">
+  <footer id="footer" class="footer">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 

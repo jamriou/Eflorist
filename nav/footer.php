@@ -4,8 +4,8 @@
 ?>
 <!-- FOOTER -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-4 col-md-6">
+    <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
             <h5 class="h1"><strong><span>eFlorist</span></strong></h5>
             <?php
                 if($_SESSION['language'] == "en"){?>
@@ -16,7 +16,7 @@
             <?php } ?>
             <!--<p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Bootstrapious.com</a></p>-->
         </div>
-        <div class="col-lg-2 col-md-6" style="text-align: center;">
+        <div class="col-lg-2 col-6 footer-links" style="text-align: center;">
             <h5 class="mb-3"><strong><span><?=$quickLinks[$_SESSION['language']]?></span></strong></h5>
             <ul class="list-unstyled text-muted">
                 <li><a href="index.php"><?=$home[$_SESSION['language']]?></a></li>
@@ -33,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-lg-2 col-md-6 footer-top">
+        <div class="col-lg-2 col-6 footer-links footer-top">
             <h5 class="mb-3"><strong><span><?=$socials[$_SESSION['language']]?></span></strong></h5>
             <ul class="list-unstyled text-muted">
             <li>
@@ -46,7 +46,7 @@
             </li>
             </ul>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h5 class="mb-3"><strong><span><?=$newsletter[$_SESSION['language']]?></span></strong></h5>
             <p class="small text-muted"><?=$newsletterText[$_SESSION['language']]?></p>   
             <!--<form action="#">
