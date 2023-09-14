@@ -80,9 +80,7 @@ $_SESSION['added'] = false;
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services" style="padding: 15px;">
-      <div class="container">
-
-        <div class="row">
+      <div class="flex-container">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-plant"></i></div>
@@ -90,14 +88,14 @@ $_SESSION['added'] = false;
               <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+          <div class="col-lg-4 col-md-6" style="margin-left: auto;">
             <div class="icon-box">
               <div class="icon"><i class="icofont-crop-plant"></i></div>
               <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+          <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-egg-plant"></i></div>
               <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
@@ -105,7 +103,6 @@ $_SESSION['added'] = false;
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Featured Services Section -->
 
