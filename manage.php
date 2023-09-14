@@ -94,16 +94,14 @@ if($categoryPlant =="cacti") {
   <!-- Vendor CSS Files -->
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/venobox/venobox.css" rel="stylesheet">
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-
-  <!-- Main Scripts -->
-  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
-  <script src="js/main.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -203,7 +201,19 @@ if($categoryPlant =="cacti") {
   <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
+  
+  <div id="preloader"></div>
 
+    <!-- Main Scripts -->
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js" type="text/javascript"></script>
 </body>
 
 </html>

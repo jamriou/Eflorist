@@ -31,23 +31,20 @@ $_SESSION['added'] = false;
   <!-- Vendor CSS Files -->
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/venobox/venobox.css" rel="stylesheet">
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
 
-  <!-- Main Scripts -->
-  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript" async></script>
-  <script src="js/main.js" type="text/javascript" async></script>
 </head>
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -80,9 +77,7 @@ $_SESSION['added'] = false;
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services" style="padding: 15px;">
-      <div class="container">
-
-        <div class="row">
+      <div class="flex-container">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-plant"></i></div>
@@ -90,14 +85,14 @@ $_SESSION['added'] = false;
               <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+          <div class="col-lg-4 col-md-6" style="margin-left: auto;">
             <div class="icon-box">
               <div class="icon"><i class="icofont-crop-plant"></i></div>
               <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
               <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+          <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-egg-plant"></i></div>
               <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
@@ -105,7 +100,6 @@ $_SESSION['added'] = false;
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Featured Services Section -->
 
@@ -116,6 +110,19 @@ $_SESSION['added'] = false;
   <footer id="footer" class="w-100 py-4 flex-shrink-0 fixed-bottom">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
-</body>
+
+  <div id="preloader"></div>
+
+    <!-- Main Scripts -->
+  <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js" type="text/javascript"></script>
+  </body>
 
 </html>
