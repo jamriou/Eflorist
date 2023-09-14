@@ -214,7 +214,7 @@ while($row = $stmt->fetch()){
       <br>
     </section><!-- End Featured Services Section -->
 
-    <section id="total" class="featured-services" style="padding: 15px;">
+    <section class="featured-services" style="padding: 15px;">
       <div class="container">
         <div class="icon-box text-center">
           <?php if(isset($_SESSION['checkedOut']) && $_SESSION['checkedOut']) { ?>

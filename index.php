@@ -113,7 +113,7 @@ $_SESSION['added'] = false;
 
   <!-- ======= Footer =======  -->
 
-  <footer id="footer" class="w-100 py-4 flex-shrink-0">
+  <footer id="footer" class="w-100 py-4 flex-shrink-0 fixed-bottom">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 </body>
