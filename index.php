@@ -46,6 +46,62 @@ $_SESSION['added'] = false;
   <!-- ======= Header ======= -->
   <?php include "nav/navbar.php"; ?>
 
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Welcome to <span>eFlorist</span></h2>
+          <p>An online store where premium quality plants of the finest quality can be found.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="tropicals.php?page=1" class="btn-get-started">Our most popular plants</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-brightness-alt-high"></i></div>
+              <h4 class="title"><a href="tropicals.php?page=1" class="stretched-link">Our tropicals</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-brightness-alt-high-fill"></i></div>
+              <h4 class="title"><a href="cacti.php?page=1" class="stretched-link">Our Cacti</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-brightness-high-fill"></i></div>
+              <h4 class="title"><a href="outdoors.php?page=1" class="stretched-link">Our garden seeds</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-command"></i></div>
+              <h4 class="title"><a href="contactUs.php" class="stretched-link">Who are we?</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
@@ -61,8 +117,8 @@ $_SESSION['added'] = false;
           <h1><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</h1>
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
-          <div class="d-flex">
-            <a href="tropicals.php" class="btn-get-started"><?=$h1Button[$_SESSION['language']]?></a>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="tropicals.php?page=1" class="btn-get-started">Our most popular plants</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -75,34 +131,6 @@ $_SESSION['added'] = false;
 
   <main id="main">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services" style="padding: 15px;">
-      <div class="flex-container">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-plant"></i></div>
-              <h4 class="title"><a href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" style="margin-left: auto;">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-crop-plant"></i></div>
-              <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-egg-plant"></i></div>
-              <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$outdoorsDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Featured Services Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer =======  -->
@@ -114,15 +142,15 @@ $_SESSION['added'] = false;
   <div id="preloader"></div>
 
     <!-- Main Scripts -->
+  <script src="js/main.js" type="text/javascript"></script>
   <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
   <script src="vendor/aos/aos.js"></script>
   <script src="vendor/glightbox/js/glightbox.min.js"></script>
   <script src="vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
-
   <!-- Template Main JS File -->
-  <script src="js/main.js" type="text/javascript"></script>
+
   </body>
 
 </html>
