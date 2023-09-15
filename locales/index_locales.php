@@ -36,6 +36,10 @@ $outdoorsDef= array(
     "en"=>"Ready to spruce up your outdoors? View our plants best suited to stay outside and grow healthy crops!", 
     "fr"=>"Prêt à embellir votre extérieur? Découvrez nos plantes les mieux adaptées pour rester à l'extérieur et faire pousser des cultures saines!"
 );
+$aquatics= array(
+    "en"=>"Aquuatics", 
+    "fr"=>"Aquatiques"
+);
 $contact= array(
     "en"=>"Contact", 
     "fr"=>"Contacter"
@@ -60,12 +64,76 @@ $findUs= array(
     "en"=>"You can find us here :", 
     "fr"=>"Vous pouvez nous trouver ici :"
 );
-$welcome= array(
-    "en"=>"Welcome", 
-    "fr"=>"Bienvenue"
+$welcomeTo= array(
+    "en"=>"Welcome to ", 
+    "fr"=>"Bienvenue chez "
 );
-$ready= array(
-    "en"=>"Ready to start shopping our best-sellers?", 
-    "fr"=>"Prêt à magasiner nos meilleur vendeurs?"
+$welcomeMessage= array(
+    "en"=>"An online store where premium quality plants of the finest quality can be found.", 
+    "fr"=>"Une boutique en ligne où l'on peut trouver des plantes de première qualité."
+);
+$popularPlants= array(
+    "en"=>"Our most popular plants", 
+    "fr"=>"Nos meilleur vendeurs"
+);
+$ourServices= array(
+    "en"=>"Our Services", 
+    "fr"=>"Nos Services"
+);
+$servicesDescription= array(
+    "en"=>"eFlorist stands out by offering you the best services available at all times:", 
+    "fr"=>"eFlorist se demarque en vous offrant les meilleurs services disponibles en tout temps donc:"
+);
+$shipping= array(
+    "en"=>"Shipping", 
+    "fr"=>"Livraison"
+);
+$shippingDescription= array(
+    "en"=>"We ship only with the top suppliers and provide free tracking on every purchase", 
+    "fr"=>"Nous expédions uniquement avec les meilleurs fournisseurs et offrons un suivi de colis gratuit pour chaque achat."
+);
+$readMore= array(
+    "en"=>"Read more :", 
+    "fr"=>"Lisez plus :"
+);
+$freezing= array(
+    "en"=>"Freezing protection ", 
+    "fr"=>"Protection contre le gel "
+);
+$freezingDescription= array(
+    "en"=>"Every plant is shipped in a thermal protection box, so no plant will every catch a cold!", 
+    "fr"=>"Chaque plante est expédiée dans une boîte de protection thermique, donc aucune plante n'attrapera froid!"
+);
+$shop= array(
+    "en"=>"Premium quality", 
+    "fr"=>"Qualité superieur"
+);
+$shopDescription= array(
+    "en"=>"We only offer plants of top quality. Our plants are always sourced from eco-friendly suppliers", 
+    "fr"=>"Nous proposons uniquement des plantes de première qualité. Nos plantes proviennent toujours de fournisseurs respectueux de l'environnement"
+);
+$garanty= array(
+    "en"=>"Money back garanty", 
+    "fr"=>"Garantie argent remise"
+);
+$garantyDescription= array(
+    "en"=>"Received a plant in bad shape? Don't worry! We offer a money-back garanty if you plant arrives damaged", 
+    "fr"=>"Vous avez reçu une plante en mauvais état ? Ne vous inquiètez pas! Nous offrons une garantie de remboursement si votre plante arrive endommagée "
+);
+$globe= array(
+    "en"=>"Worldwide diversity", 
+    "fr"=>"Diversité mondiale"
+);
+$globeDescription= array(
+    "en"=>"We offre a variety of plantes that originate from all over the world, get collecting!", 
+    "fr"=>"Nous proposons une variété de plantes originaires du monde entier, collectionnez-les !"
+);
+$payment= array(
+    "en"=>"Diverse payment methods", 
+    "fr"=>"Divers mode de paiement"
+);
+$paymentDescription= array(
+    "en"=>"We take all major forms of payments, including but not limited too; Visa, Mastercard and Paypal!", 
+    "fr"=>"Nous acceptons toutes les principales formes de paiement, y compris Visa, Mastercard et Paypal!"
 );
 ?>

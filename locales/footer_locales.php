@@ -24,7 +24,7 @@ $newsletter= array(
     "fr"=>"Infolettre"
 );
 $newsletterText= array(
-    "en"=>"Our newsletter is currently unavailable. Please come back a later time.", 
+    "en"=>"Our newsletter is currently unavailable. Please come back at a later time.", 
     "fr"=>"Notre infolettre est actuellement indisponible. Veuillez revenir plus tard."
 );
 $allPersonsFictitiousDisclaimer = array(

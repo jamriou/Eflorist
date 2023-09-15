@@ -51,10 +51,10 @@ $_SESSION['added'] = false;
     <div class="container position-relative">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-          <h2>Welcome to <span>eFlorist</span></h2>
-          <p>An online store where premium quality plants of the finest quality can be found.</p>
+          <h2><?=$welcomeTo[$_SESSION['language']]?><span>eFlorist</span></h2>
+          <p><?=$welcomeMessage[$_SESSION['language']]?></p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="tropicals.php?page=1" class="btn-get-started">Our most popular plants</a>
+            <a href="tropicals.php?page=1" class="btn-get-started"><?=$popularPlants[$_SESSION['language']]?></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -70,28 +70,28 @@ $_SESSION['added'] = false;
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-brightness-alt-high"></i></div>
-              <h4 class="title"><a href="tropicals.php?page=1" class="stretched-link">Tropicals</a></h4>
+              <h4 class="title"><a href="tropicals.php?page=1" class="stretched-link"><?=$tropicals[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-brightness-alt-high-fill"></i></div>
-              <h4 class="title"><a href="cacti.php?page=1" class="stretched-link">Cacti</a></h4>
+              <h4 class="title"><a href="cacti.php?page=1" class="stretched-link"><?=$cacti[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-brightness-high-fill"></i></div>
-              <h4 class="title"><a href="outdoors.php?page=1" class="stretched-link">Garden</a></h4>
+              <h4 class="title"><a href="outdoors.php?page=1" class="stretched-link"><?=$outdoors[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-command"></i></div>
-              <h4 class="title"><a href="contactUs.php" class="stretched-link">Aquatics</a></h4>
+              <h4 class="title"><a href="contactUs.php" class="stretched-link"><?=$aquatics[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -128,12 +128,11 @@ $_SESSION['added'] = false;
 
   <main id="main">
 <!-- ======= Our Services Section ======= -->
-  <section id="services" class="services sections-bg">
+  <section id="services" class="services sections-bg ">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Our Services</h2>
-          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
+        <div class="section-header justify-content-center">
+          <h2><?=$ourServices[$_SESSION['language']]?></h2>
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -141,66 +140,60 @@ $_SESSION['added'] = false;
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative">
               <div class="icon">
-                <i class="bi bi-activity"></i>
+                <i class="bi bi-truck"></i>
               </div>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$shipping[$_SESSION['language']]?></h3>
+              <p><?=$shippingDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-broadcast"></i>
+                <i class="bi bi-thermometer-snow"></i>
               </div>
-              <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$freezing[$_SESSION['language']]?></h3>
+              <p><?=$freezingDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-easel"></i>
+                <i class="bi bi-shop"></i>
               </div>
-              <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$shop[$_SESSION['language']]?></h3>
+              <p><?=$shopDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
+                <i class="bi bi-clipboard-check"></i>
               </div>
-              <h3>Asperiores Commodit</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$garanty[$_SESSION['language']]?></h3>
+              <p><?=$garantyDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
+                <i class="bi bi-globe-americas"></i>
               </div>
-              <h3>Velit Doloremque</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$globe[$_SESSION['language']]?></h3>
+              <p><?=$globeDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
+                <i class="bi bi-credit-card"></i>
               </div>
-              <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+              <h3><?=$payment[$_SESSION['language']]?></h3>
+              <p><?=$paymentDescription[$_SESSION['language']]?></p>
             </div>
           </div><!-- End Service Item -->
 
