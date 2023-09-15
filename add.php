@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "locales/add_locales.php";
+include "./database_connection//connection_info.php";
+include "./database_connection//pdo_connect.php";
 
 if($_SESSION['isAdmin'] == false) {
   header("Location: index.php");

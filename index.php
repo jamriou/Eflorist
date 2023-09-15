@@ -69,28 +69,28 @@ $_SESSION['added'] = false;
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-brightness-alt-high"></i></div>
+            <div class="icon"><img src="img/plant.png" class="img-box"></div>
               <h4 class="title"><a href="tropicals.php?page=1" class="stretched-link"><?=$tropicals[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-brightness-alt-high-fill"></i></div>
+              <div class="icon"><img src="img/cactus.png" class="img-box"></div>
               <h4 class="title"><a href="cacti.php?page=1" class="stretched-link"><?=$cacti[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-brightness-high-fill"></i></div>
+            <div class="icon"><img src="img/sprout.png" class="img-box"></div>
               <h4 class="title"><a href="outdoors.php?page=1" class="stretched-link"><?=$outdoors[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-command"></i></div>
+            <div class="icon"><img src="img/seaweed.png" class="img-box"></div>
               <h4 class="title"><a href="contactUs.php" class="stretched-link"><?=$aquatics[$_SESSION['language']]?></a></h4>
             </div>
           </div><!--End Icon Box -->

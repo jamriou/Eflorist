@@ -136,4 +136,8 @@ $paymentDescription= array(
     "en"=>"We take all major forms of payments, including but not limited too; Visa, Mastercard and Paypal!", 
     "fr"=>"Nous acceptons toutes les principales formes de paiement, y compris Visa, Mastercard et Paypal!"
 );
+$ready= array(
+    "en"=>"Ready to start shopping our best-sellers?", 
+    "fr"=>"Prêt à magasiner nos meilleur vendeurs?"
+);
 ?>
