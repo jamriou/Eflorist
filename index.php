@@ -42,7 +42,7 @@ $_SESSION['added'] = false;
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <!-- ======= Header ======= -->
   <?php include "nav/navbar.php"; ?>
 
@@ -139,15 +139,15 @@ $_SESSION['added'] = false;
   <div id="preloader"></div>
 
     <!-- Main Scripts -->
-  <script src="js/main.js" type="text/javascript"></script>
   <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
   <script src="vendor/aos/aos.js"></script>
   <script src="vendor/glightbox/js/glightbox.min.js"></script>
   <script src="vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <!-- Template Main JS File -->
 
+  <!-- Template Main JS File -->
+  <script src="js/main.js" type="text/javascript"></script>
   </body>
 
 </html>

@@ -76,12 +76,10 @@ while($row = $stmt->fetch()){
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">

@@ -81,12 +81,11 @@ while($row = $stmt->fetch()){
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">

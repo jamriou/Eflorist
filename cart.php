@@ -67,12 +67,10 @@ while($row = $stmt->fetch()){
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="padding-top: 10px;">
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="heroCart" class="d-flex align-items-center">
@@ -242,10 +240,10 @@ while($row = $stmt->fetch()){
   <footer id="footer" class="w-100 py-4 flex-shrink-0">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
-  
+
   <div id="preloader"></div>
 
-    <!-- Main Scripts -->
+  <!-- Main Scripts -->
   <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
   <script src="vendor/aos/aos.js"></script>
@@ -255,6 +253,7 @@ while($row = $stmt->fetch()){
 
   <!-- Template Main JS File -->
   <script src="js/main.js" type="text/javascript"></script>
+
 </body>
 
 </html>

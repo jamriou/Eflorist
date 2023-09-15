@@ -54,15 +54,10 @@ if(time()-$_SESSION['timeOut'] > 1000)
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <?php include "nav/navbar.php"; ?>
-
-    </div>
+  <?php include "nav/navbar.php"; ?>
 
   </header><!-- End Header -->
 
