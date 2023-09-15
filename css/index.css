@@ -564,8 +564,8 @@ section {
   overflow: hidden;
 }
 
-.section-bg {
-  background-color: #f9f9fa;
+.sections-bg {
+  background-color: #f3f4f6;
 }
 
 .section-title {
@@ -613,7 +613,79 @@ section {
     font-size: 38px;
   }
 }
+/*--------------------------------------------------------------
+# Our Services Section
+--------------------------------------------------------------*/
+.services {
+  padding: 60px 0;
+}
 
+.services .service-item {
+  padding: 40px;
+  background: #fff;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.services .service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.services .service-item .icon i {
+  color: var(--color-default);
+  font-size: 56px;
+  transition: ease-in-out 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .icon:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #6ad83f;
+  border-radius: 50px;
+  z-index: 1;
+  top: 10px;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.services .service-item h3 {
+  color: var(--color-default);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  padding-bottom: 8px;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #6ad83f;
+  transition: 0.3s;
+}
+
+.services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.services .service-item .readmore {
+  margin-top: 15px;
+  display: inline-block;
+  color: var(--color-secondary);
+}
+
+.services .service-item:hover .icon:before {
+  background: #15c015;
+}
+
+.services .service-item:hover h3 {
+  border-color: var(--color-secondary);
+}
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
