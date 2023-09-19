@@ -22,7 +22,7 @@ if(isset($_SESSION['fromAddCartScript'])){
     $_SESSION['fromAddCartScript'] = false;
     ?>
     <script type="text/javascript">
-    alert("<?php echo $oneType[$_SESSION['language']]; ?>");
+    alert("<?php echo strip_tags($oneType[$_SESSION['language']]); ?>");
     </script>
     <?php
   }
@@ -58,6 +58,8 @@ while($row = $stmt->fetch()){
   <title>eFlorist - Cacti</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -126,9 +128,9 @@ while($row = $stmt->fetch()){
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <img></img>
-              <h4 class="title"><?php echo $cactiName[$i] ?></h4>
-              <p class="description"><?php echo $cactiDescription[$i] ?></p>
-              <h4 class="title">$ <?php echo $cactiPrice[$i] ?></h4>
+              <h4 class="title"><?php echo strip_tags($cactiName[$i]) ?></h4>
+              <p class="description"><?php echo strip_tags($cactiDescription[$i]) ?></p>
+              <h4 class="title">$ <?php echo strip_tags($cactiPrice[$i]) ?></h4>
               <?php 
               if($cactiQuantity[$i] > 0) { ?>
                 <h4 class="title"><a href="scripts/addCart.php?name=<?=$cactiName[$i]?>&category=cacti"><?=$addToCart[$_SESSION['language']]?></a></h4>

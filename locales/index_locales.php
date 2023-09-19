@@ -37,7 +37,7 @@ $outdoorsDef= array(
     "fr"=>"Prêt à embellir votre extérieur? Découvrez nos plantes les mieux adaptées pour rester à l'extérieur et faire pousser des cultures saines!"
 );
 $aquatics= array(
-    "en"=>"Aquuatics", 
+    "en"=>"Aquatics", 
     "fr"=>"Aquatiques"
 );
 $contact= array(

@@ -84,6 +84,8 @@ if($categoryPlant =="cacti") {
   <title>eFlorist - <?=$titlePage[$_SESSION['language']]?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">

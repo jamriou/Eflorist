@@ -16,10 +16,11 @@ if(!isset($_SESSION["language"])){
 if(!isset($_SESSION["checkedOut"])){
   $_SESSION["checkedOut"]= false;
 }
-$email = $_SESSION['email'];
 if(!isset($_SESSION["email"])){
   $_SESSION["email"] = null;
 }
+$email = $_SESSION['email'];
+
 
 
 $_SESSION['exists'] = false;
@@ -47,6 +48,9 @@ while($row = $stmt->fetch()){
   <title>eFlorist - <?=$cart[$_SESSION['language']]?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -112,9 +116,9 @@ while($row = $stmt->fetch()){
                 <div class="col-lg-4 col-md-6">
                   <div class="icon-box">
                     <img></img>
-                    <h4 class="title"><?php echo $tropicalName ?></h4>
-                    <p class="description"><?php echo $tropicalDescription ?></p>
-                    <h4 class="title">$ <?php echo $tropicalPrice ?></h4>
+                    <h4 class="title"><?php echo strip_tags($tropicalName) ?></h4>
+                    <p class="description"><?php echo strip_tags($tropicalDescription)?></p>
+                    <h4 class="title">$ <?php echo strip_tags($tropicalPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$tropicalName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
                 </div>
@@ -139,9 +143,9 @@ while($row = $stmt->fetch()){
                 <div class="col-lg-4 col-md-6">
                   <div class="icon-box">
                     <img></img>
-                    <h4 class="title"><?php echo $cactiName ?></h4>
-                    <p class="description"><?php echo $cactiDescription ?></p>
-                    <h4 class="title">$ <?php echo $cactiPrice ?></h4>
+                    <h4 class="title"><?php echo strip_tags($tropicalPrice)?></h4>
+                    <p class="description"><?php echo strip_tags($cactiDescription)?></p>
+                    <h4 class="title">$ <?php echo strip_tags($cactiPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$cactiName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
                 </div>
@@ -166,9 +170,9 @@ while($row = $stmt->fetch()){
                 <div class="col-lg-4 col-md-6">
                   <div class="icon-box">
                     <img></img>
-                    <h4 class="title"><?php echo $outdoorName ?></h4>
-                    <p class="description"><?php echo $outdoorDescription ?></p>
-                    <h4 class="title">$ <?php echo $outdoorPrice ?></h4>
+                    <h4 class="title"><?php echo strip_tags($outdoorName)?></h4>
+                    <p class="description"><?php echo strip_tags($outdoorDescription)?></p>
+                    <h4 class="title">$ <?php echo strip_tags($outdoorPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$outdoorName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
                 </div>
@@ -220,7 +224,7 @@ while($row = $stmt->fetch()){
           <?php }else{?>
           <h4 class="title"><?=$total[$_SESSION['language']]?> $ <?=$totalPlant?></h4>
           <p class="title"><?=$shipping[$_SESSION['language']]?> $ 12.99</p>
-          <h4 class="title"><?=$completeTotal[$_SESSION['language']]?> $ <?php echo $totalPlant + 12.99?></h4>
+          <h4 class="title"><?=$completeTotal[$_SESSION['language']]?> $ <?php echo strip_tags($totalPlant) + 12.99?></h4>
           <?php
           if(count($plantName) != 0) {
             ?>

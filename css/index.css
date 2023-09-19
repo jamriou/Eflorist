@@ -350,6 +350,7 @@ section {
     color: rgba(255, 255, 255, 0.9);
     white-space: nowrap;
     transition: 0.3s;
+    font-size: 30px;
   }
 
   .navbar a i,
@@ -395,6 +396,7 @@ section {
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
+    font-size: 30px;
   }
 
   .mobile-nav-show {

@@ -14,7 +14,7 @@ if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
 if(!isset($_SESSION["successDeleteTropical"])){
-  $_SESSION["successDeleteCacti"]= false;
+  $_SESSION["successDeleteTropical"]= false;
 }
 
 
@@ -23,7 +23,7 @@ if(isset($_SESSION['fromAddCartScript'])){
     $_SESSION['fromAddCartScript'] = false;
     ?>
     <script type="text/javascript">
-    alert("<?php echo $oneType[$_SESSION['language']]; ?>");
+    alert("<?php echo strip_tags($oneType[$_SESSION['language']]); ?>");
     </script>
     <?php
   }
@@ -59,6 +59,9 @@ while($row = $stmt->fetch()){
   <title>eFlorist - Tropicals</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -133,9 +136,9 @@ while($row = $stmt->fetch()){
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <img></img>
-              <h4 class="title"><?php echo $tropicalName[$i] ?></h4>
-              <p class="description"><?php echo $tropicalDescription[$i] ?></p>
-              <h4 class="title">$ <?php echo $tropicalPrice[$i] ?></h4>
+              <h4 class="title"><?php echo strip_tags($tropicalName[$i]) ?></h4>
+              <p class="description"><?php echo strip_tags($tropicalDescription[$i]) ?></p>
+              <h4 class="title">$ <?php echo strip_tags($tropicalPrice[$i]) ?></h4>
               <?php 
               if($tropicalQuantity[$i] > 0) { ?>
                 <h4 class="title"><a href="scripts/addCart.php?name=<?=$tropicalName[$i]?>&category=tropicals"><?=$addToCart[$_SESSION['language']]?></a></h4>
