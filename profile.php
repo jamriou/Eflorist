@@ -82,34 +82,34 @@ $country = $_SESSION['country'];
               <form action="scripts/modifyProfile.php" method="post" name="modifyProfile" class="col-md-5 border-right">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
+                        <h4 class="text-right"><?=$settings[$_SESSION['language']]?></h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="first" name="first" id="first" class="form-control" placeholder="<?=$first?>" value="<?=$first?>"></div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="last" name="last" id="last" class="form-control" placeholder="<?=$last?>" value="<?=$last?>"></div>
+                        <div class="col-md-6"><label class="labels"><?=$nameL[$_SESSION['language']]?></label><input type="first" name="first" id="first" class="form-control" placeholder="<?=$first?>" value="<?=$first?>"></div>
+                        <div class="col-md-6"><label class="labels"><?=$surnameL[$_SESSION['language']]?></label><input type="last" name="last" id="last" class="form-control" placeholder="<?=$last?>" value="<?=$last?>"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="phone" name="phone" id="phone" class="form-control" placeholder="Not available" value="" disabled></div>
-                        <div class="col-md-12"><label class="labels">Address Line 1</label><input type="street" name="street" id="street" class="form-control" placeholder="<?=$street?>" value="<?=$street?>"></div>
-                        <div class="col-md-12"><label class="labels">City</label><input type="city" name="city" id="city" class="form-control" placeholder="<?=$city?>" value="<?=$city?>"></div>
-                        <div class="col-md-12"><label class="labels">Postcode</label><input type="postCode" name="postCode" id="postCode" class="form-control" placeholder="<?=$postCode?>" value="<?=$postCode?>"></div>
-                        <div class="col-md-12"><label class="labels">Email</label><input type="email" name="email" id="email" class="form-control" placeholder="<?=$email?>" value="<?=$email?>"></div>
+                        <div class="col-md-12"><label class="labels"><?=$mobileL[$_SESSION['language']]?></label><input type="phone" name="phone" id="phone" class="form-control" placeholder="Not available" value="" disabled></div>
+                        <div class="col-md-12"><label class="labels"><?=$addressL[$_SESSION['language']]?></label><input type="street" name="street" id="street" class="form-control" placeholder="<?=$street?>" value="<?=$street?>"></div>
+                        <div class="col-md-12"><label class="labels"><?=$cityL[$_SESSION['language']]?></label><input type="city" name="city" id="city" class="form-control" placeholder="<?=$city?>" value="<?=$city?>"></div>
+                        <div class="col-md-12"><label class="labels"><?=$postCodeL[$_SESSION['language']]?></label><input type="postCode" name="postCode" id="postCode" class="form-control" placeholder="<?=$postCode?>" value="<?=$postCode?>"></div>
+                        <div class="col-md-12"><label class="labels"><?=$emailL[$_SESSION['language']]?></label><input type="email" name="email" id="email" class="form-control" placeholder="<?=$email?>" value="<?=$email?>"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Country</label><input type="country" name="country" id="country" class="form-control" placeholder="<?=$country?>" value="<?=$country?>"></div>
-                        <div class="col-md-6"><label class="labels">State/Province</label><input type="state" name="state" id="state" class="form-control" value="<?=$state?>" placeholder="<?=$state?>"></div>
+                        <div class="col-md-6"><label class="labels"><?=$countryL[$_SESSION['language']]?></label><input type="country" name="country" id="country" class="form-control" placeholder="<?=$country?>" value="<?=$country?>"></div>
+                        <div class="col-md-6"><label class="labels"><?=$stateL[$_SESSION['language']]?></label><input type="state" name="state" id="state" class="form-control" value="<?=$state?>" placeholder="<?=$state?>"></div>
                     </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"><?=$save[$_SESSION['language']]?></button></div>
                 </div>
               </form>
               <div class="col-md-4">
                   <div class="p-3 py-5">
                       <div class="d-flex justify-content-between align-items-center experience">
-                        <span>Edit Password</span>
-                        <button class="btn btn-primary profile-button" type="button">Confirm</button>
+                        <span><?=$editPassword[$_SESSION['language']]?></span>
+                        <button class="btn btn-primary profile-button" type="button"><?=$confirm[$_SESSION['language']]?></button>
                       </div><br>
-                      <div class="col-md-12"><label class="labels">Enter new password</label><input type="text" class="form-control" placeholder="********" value="" disabled></div> <br>
-                      <div class="col-md-12"><label class="labels">Confirm new password</label><input type="text" class="form-control" placeholder="********" value="" disabled></div>
+                      <div class="col-md-12"><label class="labels"><?=$enterPassword[$_SESSION['language']]?></label><input type="text" class="form-control" placeholder="********" value="" disabled></div> <br>
+                      <div class="col-md-12"><label class="labels"><?=$confirmPassword[$_SESSION['language']]?></label><input type="text" class="form-control" placeholder="********" value="" disabled></div>
                   </div>
               </div>
             </div>
