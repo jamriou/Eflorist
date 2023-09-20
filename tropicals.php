@@ -38,6 +38,7 @@ $tropicalName = array();
 $tropicalDescription = array();
 $tropicalQuantity = array();
 $tropicalPrice = array();
+$totalPlants = 0;
 
 $stmt = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalQuantity, tropicalPrice FROM dbo.tropicals ORDER BY tropicalName DESC");
 $result = $stmt->execute();
@@ -46,6 +47,7 @@ while($row = $stmt->fetch()){
     array_push($tropicalDescription, $row['tropicalDescription']);
     array_push($tropicalQuantity, $row['tropicalQuantity']);
     array_push($tropicalPrice, $row['tropicalPrice']);
+    $totalPlants = $totalPlants + 1; 
 };
   ?>
 
@@ -77,9 +79,6 @@ while($row = $stmt->fetch()){
   <link href="vendor/aos/aos.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/index.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
@@ -129,7 +128,7 @@ while($row = $stmt->fetch()){
         }
 
           for($i = 0 + $page; $i < $page + $plant ; $i++){
-            if($tropicalName[$i] == null){
+            if($i == $totalPlants){
               break;
             }
         ?>

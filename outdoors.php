@@ -37,6 +37,7 @@ $outdoorName = array();
 $outdoorDescription = array();
 $outdoorQuantity = array();
 $outdoorPrice = array();
+$totalPlants = 0;
 
 $stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorQuantity, outdoorPrice FROM dbo.outdoors ORDER BY outdoorName DESC");
 $result = $stmt->execute();
@@ -45,6 +46,7 @@ while($row = $stmt->fetch()){
     array_push($outdoorDescription, $row['outdoorDescription']);
     array_push($outdoorQuantity, $row['outdoorQuantity']);
     array_push($outdoorPrice, $row['outdoorPrice']);
+    $totalPlants = $totalPlants + 1; 
 };
 ?>
 
@@ -75,9 +77,6 @@ while($row = $stmt->fetch()){
   <link href="vendor/aos/aos.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/index.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
@@ -127,7 +126,7 @@ while($row = $stmt->fetch()){
           }
 
             for($i = 0 + $page; $i < $page + $plant ; $i++){
-              if($outdoorName[$i] == null){
+              if($i == $totalPlants){
                 break;
               }
           ?>

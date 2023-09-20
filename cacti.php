@@ -37,6 +37,7 @@ $cactiName = array();
 $cactiDescription = array();
 $cactiQuantity = array();
 $cactiPrice = array();
+$totalPlants = 0;
 
 $stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis ORDER BY cactiName DESC");
 $result = $stmt->execute();
@@ -45,6 +46,7 @@ while($row = $stmt->fetch()){
     array_push($cactiDescription, $row['cactiDescription']);
     array_push($cactiQuantity, $row['cactiQuantity']);
     array_push($cactiPrice, $row['cactiPrice']);
+    $totalPlants = $totalPlants + 1; 
 };
   ?>
 
@@ -121,7 +123,7 @@ while($row = $stmt->fetch()){
         }
 
           for($i = 0 + $page; $i < $page + $plant ; $i++){
-            if($cactiName[$i] == null){
+            if($i == $totalPlants){
               break;
             }
         ?>
