@@ -27,5 +27,8 @@ $findUs= array(
     "en"=>"You can find us here :", 
     "fr"=>"Vous pouvez nous trouver ici :"
 );
-
+$fillAll = array(
+    "en"=>"Please fill in all fields!",
+    "fr"=>"S'il vous plait, veuillez remplir tous les champs!"
+);
 ?>
