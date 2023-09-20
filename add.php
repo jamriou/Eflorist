@@ -108,6 +108,7 @@ if(time()-$_SESSION['timeOut'] > 3000)
                     <option value="tropicals"><?=$tropical[$_SESSION['language']]?></option>
                     <option value="cacti"><?=$cactus[$_SESSION['language']]?></option>
                     <option value="outdoors"><?=$garden[$_SESSION['language']]?></option>
+                    <option value="aquatics"><?=$aquatic[$_SESSION['language']]?></option>
                   </select>
                 </div>
                 <div class="form-group col-md-4">
