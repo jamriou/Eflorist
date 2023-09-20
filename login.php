@@ -44,18 +44,18 @@ include "./locales/login_locales.php";
 						 </div>
 					</div>
                <form action="scripts/login.php" method="post" name="login">
-                     <div class="form-group">
-                        <label for="exampleInputEmail1"><?=$email[$_SESSION['language']]?></label>
-                        <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
-                     </div>
-                     <div class="form-group">
-                        <label for="exampleInputEmail1"><?=$password[$_SESSION['language']]?></label>
-                        <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
-                     </div>
-                     <div class="col-md-12 text-center ">
-                        <button type="submit" class="btn btn-block login-btn btn-primary"><?=$login[$_SESSION['language']]?></button>
-                     </div>
-                     </form>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1"><?=$email[$_SESSION['language']]?></label>
+                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1"><?=$password[$_SESSION['language']]?></label>
+                     <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
+                  </div>
+                  <div class="col-md-12 text-center ">
+                     <button type="submit" class="btn btn-block login-btn btn-primary"><?=$login[$_SESSION['language']]?></button>
+                  </div>
+               </form>
                <div class="col-md-12 ">
                   <div class="login-or">
                      <hr class="hr-or">
