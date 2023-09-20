@@ -12,7 +12,7 @@ if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
 
-if(time()-$_SESSION['timeOut'] > 1000) 
+if(time()-$_SESSION['timeOut'] > 3000) 
 { 
   $lang = $_SESSION['language'];
   session_unset(); 
