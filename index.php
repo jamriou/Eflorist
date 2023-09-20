@@ -21,6 +21,8 @@ $_SESSION['added'] = false;
   <title>eFlorist - Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -42,10 +44,66 @@ $_SESSION['added'] = false;
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <!-- ======= Header ======= -->
   <?php include "nav/navbar.php"; ?>
 
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2><?=$welcomeTo[$_SESSION['language']]?><span>eFlorist</span></h2>
+          <p><?=$welcomeMessage[$_SESSION['language']]?></p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="tropicals.php?page=1" class="btn-get-started"><?=$popularPlants[$_SESSION['language']]?></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 text-center">
+          <img src="img/Logo.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+            <div class="icon"><img src="img/plant.png" class="img-box"></div>
+              <h4 class="title"><a href="tropicals.php?page=1" class="stretched-link"><?=$tropicals[$_SESSION['language']]?></a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><img src="img/cactus.png" class="img-box"></div>
+              <h4 class="title"><a href="cacti.php?page=1" class="stretched-link"><?=$cacti[$_SESSION['language']]?></a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+            <div class="icon"><img src="img/sprout.png" class="img-box"></div>
+              <h4 class="title"><a href="outdoors.php?page=1" class="stretched-link"><?=$outdoors[$_SESSION['language']]?></a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+            <div class="icon"><img src="img/seaweed.png" class="img-box"></div>
+              <h4 class="title"><a href="contactUs.php" class="stretched-link"><?=$aquatics[$_SESSION['language']]?></a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
@@ -61,9 +119,6 @@ $_SESSION['added'] = false;
           <h1><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</h1>
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
-          <div class="d-flex">
-            <a href="tropicals.php" class="btn-get-started"><?=$h1Button[$_SESSION['language']]?></a>
-          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="img/plant.gif" class="img-fluid animated" alt="">
@@ -74,40 +129,86 @@ $_SESSION['added'] = false;
   </section><!-- End Hero -->
 
   <main id="main">
+<!-- ======= Our Services Section ======= -->
+  <section id="services" class="services sections-bg ">
+      <div class="container" data-aos="fade-up">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services" style="padding: 15px;">
-      <div class="flex-container">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-plant"></i></div>
-              <h4 class="title"><a href="tropicals.php"><?=$tropicals[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$tropicalsDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" style="margin-left: auto;">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-crop-plant"></i></div>
-              <h4 class="title"><a href="cacti.php"><?=$cacti[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$cactiDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-egg-plant"></i></div>
-              <h4 class="title"><a href="outdoors.php"><?=$outdoors[$_SESSION['language']]?></a></h4>
-              <p class="description"><?=$outdoorsDef[$_SESSION['language']]?></p>
-            </div>
-          </div>
+        <div class="section-header justify-content-center">
+          <h2><?=$ourServices[$_SESSION['language']]?></h2>
         </div>
+
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h3><?=$shipping[$_SESSION['language']]?></h3>
+              <p><?=$shippingDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-thermometer-snow"></i>
+              </div>
+              <h3><?=$freezing[$_SESSION['language']]?></h3>
+              <p><?=$freezingDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-shop"></i>
+              </div>
+              <h3><?=$shop[$_SESSION['language']]?></h3>
+              <p><?=$shopDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-clipboard-check"></i>
+              </div>
+              <h3><?=$garanty[$_SESSION['language']]?></h3>
+              <p><?=$garantyDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <h3><?=$globe[$_SESSION['language']]?></h3>
+              <p><?=$globeDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-credit-card"></i>
+              </div>
+              <h3><?=$payment[$_SESSION['language']]?></h3>
+              <p><?=$paymentDescription[$_SESSION['language']]?></p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
       </div>
-    </section><!-- End Featured Services Section -->
+    </section><!-- End Our Services Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer =======  -->
 
-  <footer id="footer" class="w-100 py-4 flex-shrink-0 fixed-bottom">
+  <footer id="footer" class="footer">
     <?php include "nav/footer.php"; ?>
   </footer><!-- End Footer -->
 

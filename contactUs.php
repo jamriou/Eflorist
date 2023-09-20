@@ -14,6 +14,9 @@ include "locales/contactUs_locales.php";
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
+
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
 
@@ -33,12 +36,11 @@ include "locales/contactUs_locales.php";
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="padding-top: 50px;">
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
+  <!-- End Header -->
 
 <main id="main">
 

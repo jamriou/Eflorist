@@ -22,6 +22,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  
 }
 
 a {
@@ -149,7 +150,7 @@ h6 {
 }
 
 .header .logo h1 span {
-  color: #444444;
+  color: #ffffff;
 }
 
 .sticked-header-offset {
@@ -331,7 +332,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(15, 131, 0, 0.9);
+    background: #6ad83fa9;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -349,6 +350,7 @@ section {
     color: rgba(255, 255, 255, 0.9);
     white-space: nowrap;
     transition: 0.3s;
+    font-size: 30px;
   }
 
   .navbar a i,
@@ -394,10 +396,11 @@ section {
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
+    font-size: 30px;
   }
 
   .mobile-nav-show {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(255, 255, 255);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -438,125 +441,129 @@ section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+.hero {
   width: 100%;
-  height: 80vh;
-  background: #fff;
-  padding-top: 82px;
+  position: relative;
+  background: var(--color-primary);
+  padding: 60px 0 0 0;
 }
 
-#heroCart {
-  width: 100%;
-  height: 30vh;
-  background: #ffffff;
-  padding-top: 152px;
+@media (min-width: 1365px) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
-#hero h1 {
-  margin: 0;
+.hero h2 {
   font-size: 48px;
   font-weight: 700;
-  line-height: 56px;
-  color: #3e4450;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-#heroCart h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #3e4450;
+.hero p {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  margin-bottom: 30px;
 }
 
-#hero h2 {
-  color: #858ea1;
-  margin: 10px 0 30px 0;
-  font-size: 24px;
+.hero .img-box {
+  width: 48px;
+  height: 48px;
+  position: relative;
 }
 
-#heroCart h2 {
-  color: #858ea1;
-  margin: 10px 0 30px 0;
-  font-size: 24px;
-}
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
+.hero .btn-get-started {
+  font-family: var(--font-primary);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 30px 10px 30px;
-  border-radius: 4px;
-  transition: 0.5s;
+  padding: 14px 40px;
+  border-radius: 50px;
+  transition: 0.3s;
   color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero .btn-get-started:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 640px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero .btn-get-started {
+    font-size: 14px;
+  }
+}
+
+.hero .icon-boxes {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 1200px) {
+  .hero .icon-boxes:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(50% + 20px);
+    background-color: #fff;
+  }
+}
+
+.hero .icon-box {
+  padding: 60px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-color: #30c730;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.hero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.hero .icon-box .title a {
+  color: #6ad83f;
+  transition: 0.3s;
+}
+
+.hero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 48px;
+  line-height: 1;
+  color: #6ad83f;
+}
+
+.hero .icon-box:hover {
   background: #6ad83f;
-  box-shadow: 0 8px 28px rgba(32, 255, 69, 0.45);
 }
 
-#hero .btn-get-started:hover {
-  background: #15c015;
-  box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
+.hero .icon-box:hover .title a,
+.hero .icon-box:hover .icon {
+  color: #fff;
 }
 
-#hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 991px) {
-  #hero {
-    height: 100vh;
-  }
-  #hero .animated {
-    -webkit-animation: none;
-    animation: none;
-  }
-  #hero .hero-img {
-    text-align: center;
-  }
-  #hero .hero-img img {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-  #hero .hero-img img {
-    width: 70%;
-  }
-}
-
-@media (max-width: 575px) {
-  #hero .hero-img img {
-    width: 80%;
-  }
-}
-
-@-webkit-keyframes up-down {
-  0% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes up-down {
-  0% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
 
 /*--------------------------------------------------------------
 # Sections General
@@ -566,8 +573,34 @@ section {
   overflow: hidden;
 }
 
-.section-bg {
-  background-color: #f9f9fa;
+.sections-bg {
+  background-color: #f3f4f6;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-header h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .section-title {
@@ -615,7 +648,79 @@ section {
     font-size: 38px;
   }
 }
+/*--------------------------------------------------------------
+# Our Services Section
+--------------------------------------------------------------*/
+.services {
+  padding: 60px 0;
+}
 
+.services .service-item {
+  padding: 40px;
+  background: #fff;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.services .service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.services .service-item .icon i {
+  color: var(--color-default);
+  font-size: 56px;
+  transition: ease-in-out 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .icon:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #6ad83f;
+  border-radius: 50px;
+  z-index: 1;
+  top: 10px;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.services .service-item h3 {
+  color: var(--color-default);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  padding-bottom: 8px;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #6ad83f;
+  transition: 0.3s;
+}
+
+.services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.services .service-item .readmore {
+  margin-top: 15px;
+  display: inline-block;
+  color: var(--color-secondary);
+}
+
+.services .service-item:hover .icon:before {
+  background: #15c015;
+}
+
+.services .service-item:hover h3 {
+  border-color: var(--color-secondary);
+}
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
@@ -884,61 +989,16 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: #f9f9fa;
-  min-height: 40px;
-  margin-top: 82px;
-}
-
-.breadcrumbs h2 {
-  font-size: 36px;
-  font-weight: 300;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #778196;
-  content: "/";
-}
-
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 58px;
-  }
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-  .breadcrumbs ol {
-    display: block;
-  }
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
-}
-
-/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-
+.footer {
+  font-size: 14px;
+  padding: 50px 0;
+  color: white;
+}
 #footer {
   background-color: #f3f4f6;
-  color: #5f687b;
+  color: #6ad83f;
   font-size: 14px;
   position: relative;
   bottom: 0;
@@ -982,6 +1042,10 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
 
 .pagination > li > a {
   background-color: white;

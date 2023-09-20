@@ -1,8 +1,8 @@
 <?php
 session_start();
 #includes a PDO setup
-include "..//..//database_connection//connection_info.php";
-include "..//..//database_connection//pdo_connect.php";
+include "./..//database_connection//connection_info.php";
+include "./..//database_connection//pdo_connect.php";
 include "..//locales/add_locales.php";
 #Set up PDO for SQL injection protection
 
@@ -33,13 +33,13 @@ window.location.href = "../add.php";
 <?php
 }else{
     if($category == "tropicals") {
-        $stmt = $pdo->prepare("SELECT tropicalName FROM [dbo].[tropicals] WHERE tropicalName = ?");
+        $stmt = $pdo->prepare("SELECT tropicalName FROM dbo.tropicals WHERE tropicalName = ?");
         $stmt->execute([$name]);
         while($row = $stmt->fetch()){
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtTropical = $pdo->prepare("INSERT INTO [dbo].[tropicals] (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
+            $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
             $stmtTropical->execute([$name,$description,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
@@ -55,13 +55,13 @@ window.location.href = "../add.php";
         }
     }
     if($category == "cacti") {
-        $stmt = $pdo->prepare("SELECT cactiName FROM [dbo].[cactis] WHERE cactiName = ?");
+        $stmt = $pdo->prepare("SELECT cactiName FROM dbo.cactis WHERE cactiName = ?");
         $stmt->execute([$name]);
         while($row = $stmt->fetch()){
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtCacti = $pdo->prepare("INSERT INTO [dbo].[cactis] (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
+            $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
             $stmtCacti->execute([$name,$description,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
@@ -77,13 +77,13 @@ window.location.href = "../add.php";
         }
     }
     if($category == "outdoors") {
-        $stmt = $pdo->prepare("SELECT outdoorName FROM [dbo].[outdoors] WHERE outdoorName = ?");
+        $stmt = $pdo->prepare("SELECT outdoorName FROM dbo.outdoors WHERE outdoorName = ?");
         $stmt->execute([$name]);
         while($row = $stmt->fetch()){
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtOutdoors = $pdo->prepare("INSERT INTO [dbo].[outdoors] (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
+            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
             $stmtOutdoors->execute([$name,$description,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;

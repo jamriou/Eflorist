@@ -1,6 +1,6 @@
 <?php
-include "..//..//database_connection//connection_info.php";
-include "..//..//database_connection//pdo_connect.php";
+include "./..//database_connection//connection_info.php";
+include "./..//database_connection//pdo_connect.php";
  session_start();
 if(isset($_SESSION['authenticated'])){
     $name=$_GET['name'];
@@ -9,7 +9,7 @@ if(isset($_SESSION['authenticated'])){
   } catch(Exception $e){
     exit($e);
   }
-    $stmt = $pdo->prepare("DELETE FROM [dbo].[cart] WHERE plantName = ?");
+    $stmt = $pdo->prepare("DELETE FROM dbo.cart WHERE plantName = ?");
     $result = $stmt->execute([$name]);
     if($result){
         header("Location:../cart.php");

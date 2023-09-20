@@ -22,7 +22,7 @@ if(isset($_SESSION['fromAddCartScript'])){
     $_SESSION['fromAddCartScript'] = false;
     ?>
     <script type="text/javascript">
-    alert("<?php echo $oneType[$_SESSION['language']]; ?>");
+    alert("<?php echo strip_tags($oneType[$_SESSION['language']]);?>");
     </script>
     <?php
   }
@@ -37,6 +37,7 @@ $outdoorName = array();
 $outdoorDescription = array();
 $outdoorQuantity = array();
 $outdoorPrice = array();
+$totalPlants = 0;
 
 $stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorQuantity, outdoorPrice FROM dbo.outdoors ORDER BY outdoorName DESC");
 $result = $stmt->execute();
@@ -45,6 +46,7 @@ while($row = $stmt->fetch()){
     array_push($outdoorDescription, $row['outdoorDescription']);
     array_push($outdoorQuantity, $row['outdoorQuantity']);
     array_push($outdoorPrice, $row['outdoorPrice']);
+    $totalPlants = $totalPlants + 1; 
 };
 ?>
 
@@ -59,6 +61,8 @@ while($row = $stmt->fetch()){
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
 
@@ -76,17 +80,13 @@ while($row = $stmt->fetch()){
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -126,15 +126,15 @@ while($row = $stmt->fetch()){
           }
 
             for($i = 0 + $page; $i < $page + $plant ; $i++){
-              if($outdoorName[$i] == null){
+              if($i == $totalPlants){
                 break;
               }
           ?>
             <div class="col-lg-4 col-md-6">
               <div class="icon-box">
-                <h4 class="title"><?php echo $outdoorName[$i] ?></h4>
-                <p class="description"><?php echo $outdoorDescription[$i] ?></p>
-                <h4 class="title">$ <?php echo $outdoorPrice[$i] ?></h4>
+                <h4 class="title"><?php echo strip_tags($outdoorName[$i]) ?></h4>
+                <p class="description"><?php echo strip_tags($outdoorDescription[$i]) ?></p>
+                <h4 class="title">$ <?php echo strip_tags($outdoorPrice[$i]) ?></h4>
                 <?php 
                 if($outdoorQuantity[$i] > 0) { ?>
                   <h4 class="title"><a href="scripts/addCart.php?name=<?=$outdoorName[$i]?>&category=outdoors"><?=$addToCart[$_SESSION['language']]?></a></h4>

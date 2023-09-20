@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "locales/add_locales.php";
+include "./database_connection//connection_info.php";
+include "./database_connection//pdo_connect.php";
 
 if($_SESSION['isAdmin'] == false) {
   header("Location: index.php");
@@ -34,6 +36,8 @@ if(time()-$_SESSION['timeOut'] > 1000)
   <title>eFlorist - <?=$titlePage[$_SESSION['language']]?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -54,15 +58,10 @@ if(time()-$_SESSION['timeOut'] > 1000)
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <?php include "nav/navbar.php"; ?>
-
-    </div>
+  <?php include "nav/navbar.php"; ?>
 
   </header><!-- End Header -->
 

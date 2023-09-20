@@ -22,7 +22,7 @@ if(isset($_SESSION['fromAddCartScript'])){
     $_SESSION['fromAddCartScript'] = false;
     ?>
     <script type="text/javascript">
-    alert("<?php echo $oneType[$_SESSION['language']]; ?>");
+    alert("<?php echo strip_tags($oneType[$_SESSION['language']]); ?>");
     </script>
     <?php
   }
@@ -37,6 +37,7 @@ $cactiName = array();
 $cactiDescription = array();
 $cactiQuantity = array();
 $cactiPrice = array();
+$totalPlants = 0;
 
 $stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis ORDER BY cactiName DESC");
 $result = $stmt->execute();
@@ -45,6 +46,7 @@ while($row = $stmt->fetch()){
     array_push($cactiDescription, $row['cactiDescription']);
     array_push($cactiQuantity, $row['cactiQuantity']);
     array_push($cactiPrice, $row['cactiPrice']);
+    $totalPlants = $totalPlants + 1; 
 };
   ?>
 
@@ -58,6 +60,8 @@ while($row = $stmt->fetch()){
   <title>eFlorist - Cacti</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
@@ -76,12 +80,10 @@ while($row = $stmt->fetch()){
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <?php include "nav/navbar.php"; ?>
-  </header><!-- End Header -->
+  <?php include "nav/navbar.php"; ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -121,16 +123,16 @@ while($row = $stmt->fetch()){
         }
 
           for($i = 0 + $page; $i < $page + $plant ; $i++){
-            if($cactiName[$i] == null){
+            if($i == $totalPlants){
               break;
             }
         ?>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <img></img>
-              <h4 class="title"><?php echo $cactiName[$i] ?></h4>
-              <p class="description"><?php echo $cactiDescription[$i] ?></p>
-              <h4 class="title">$ <?php echo $cactiPrice[$i] ?></h4>
+              <h4 class="title"><?php echo strip_tags($cactiName[$i]) ?></h4>
+              <p class="description"><?php echo strip_tags($cactiDescription[$i]) ?></p>
+              <h4 class="title">$ <?php echo strip_tags($cactiPrice[$i]) ?></h4>
               <?php 
               if($cactiQuantity[$i] > 0) { ?>
                 <h4 class="title"><a href="scripts/addCart.php?name=<?=$cactiName[$i]?>&category=cacti"><?=$addToCart[$_SESSION['language']]?></a></h4>

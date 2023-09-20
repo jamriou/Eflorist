@@ -5,8 +5,8 @@ if($_SESSION['isAdmin'] == false) {
   header("Location: ..//index.php");
   }
 
-include "..//..//database_connection//connection_info.php";
-include "..//..//database_connection//pdo_connect.php";
+  include "./..//database_connection//connection_info.php";
+  include "./..//database_connection//pdo_connect.php";
 
 if(isset($_SESSION['authenticated'])){
     $name=$_GET['name'];
@@ -17,9 +17,9 @@ if(isset($_SESSION['authenticated'])){
     exit($e);
   }
   if($category == "tropicals") {
-    $stmt = $pdo->prepare("DELETE FROM [dbo].[tropicals] WHERE tropicalName = ?");
+    $stmt = $pdo->prepare("DELETE FROM dbo.tropicals WHERE tropicalName = ?");
     $result = $stmt->execute([$name]);
-    $stmtCart = $pdo->prepare("DELETE FROM [dbo].[cart] WHERE plantName = ?");
+    $stmtCart = $pdo->prepare("DELETE FROM dbo.cart WHERE plantName = ?");
     $resultCart = $stmtCart->execute([$name]);
     if($result){
         $_SESSION['successDeleteTropical'] = true;
@@ -29,9 +29,9 @@ if(isset($_SESSION['authenticated'])){
     }
   }
   if($category == "cacti") {
-    $stmt = $pdo->prepare("DELETE FROM [dbo].[cactis] WHERE cactiName = ?");
+    $stmt = $pdo->prepare("DELETE FROM dbo.cactis WHERE cactiName = ?");
     $result = $stmt->execute([$name]);
-    $stmtCart = $pdo->prepare("DELETE FROM [dbo].[cart] WHERE plantName = ?");
+    $stmtCart = $pdo->prepare("DELETE FROM dbo.cart WHERE plantName = ?");
     $resultCart = $stmtCart->execute([$name]);
     if($result){
         $_SESSION['successDeleteCacti'] = true;
@@ -41,9 +41,9 @@ if(isset($_SESSION['authenticated'])){
     }
   }
   if($category == "outdoors") {
-    $stmt = $pdo->prepare("DELETE FROM [dbo].[outdoors] WHERE outdoorName = ?");
+    $stmt = $pdo->prepare("DELETE FROM dbo.outdoors WHERE outdoorName = ?");
     $result = $stmt->execute([$name]);
-    $stmtCart = $pdo->prepare("DELETE FROM [dbo].[cart] WHERE plantName = ?");
+    $stmtCart = $pdo->prepare("DELETE FROM dbo.cart WHERE plantName = ?");
     $resultCart = $stmtCart->execute([$name]);
     if($result){
         $_SESSION['successDeleteGarden'] = true;
