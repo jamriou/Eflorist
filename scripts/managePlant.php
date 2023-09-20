@@ -67,6 +67,12 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
                 $stmtTropical->execute([$name,$description,$quantity,$price]);
                 header("Location: ../outdoors.php?page=1");
             }
+            if($category == "aquatics") {
+                echo "in aquatics";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../outdoors.php?page=1");
+            }
         }
     }
     if($OGcategory == "cacti") {
@@ -91,6 +97,12 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
             if($category == "outdoors") {
                 echo "in outdoors";
                 $stmtTropical = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../outdoors.php?page=1");
+            }
+            if($category == "aquatics") {
+                echo "in aquatics";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
                 $stmtTropical->execute([$name,$description,$quantity,$price]);
                 header("Location: ../outdoors.php?page=1");
             }
@@ -120,6 +132,45 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
                 $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
                 $stmtTropical->execute([$name,$description,$quantity,$price]);
                 header("Location: ../tropicals.php?page=1");
+            }
+            if($category == "aquatics") {
+                echo "in aquatics";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../outdoors.php?page=1");
+            }
+        }
+    }
+    if($OGcategory == "aquatics") {
+        echo "OGcategory == aquatics";
+        if($category == "aquatics") {
+            echo "category == aquatics";
+            $stmtUpdate = $pdo->prepare("UPDATE dbo.aquatics SET aquaticName = ?, aquaticDescription = ?, aquaticQuantity = ?, aquaticPrice = ? WHERE aquaticName = ?");
+            $result = $stmtUpdate->execute([$name, $description, $quantity, $price, $OGname]);
+            header("Location: ../aquatics.php?page=1");
+        }else{
+            echo "not a aquatic";
+            //delete from outdoor
+            $stmtDelete = $pdo->prepare("DELETE FROM dbo.aquatics WHERE aquaticName = ?");
+            $result = $stmtDelete->execute([$OGname]);
+            //add to new category
+            if($category == "cacti") {
+                echo "in cacti";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../cacti.php?page=1");
+            }
+            if($category == "tropicals") {
+                echo "in tropicals";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../tropicals.php?page=1");
+            }
+            if($category == "outdoors") {
+                echo "in outdoors";
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                header("Location: ../outdoors.php?page=1");
             }
         }
     }

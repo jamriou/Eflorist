@@ -71,6 +71,16 @@ if($categoryPlant =="cacti") {
       $price = $row['outdoorPrice'];
    };
  }
+ if($categoryPlant =="aquatics") {
+  $stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticQuantity, aquaticPrice FROM dbo.aquatics WHERE aquaticName = ?");
+   $result = $stmt->execute([$plantName]);
+   while($row = $stmt->fetch()){
+      $name = $row['aquaticName'];
+      $description = $row['aquaticDescription'];
+      $quantity = $row['aquaticQuantity'];
+      $price = $row['aquaticPrice'];
+   };
+ }
 
  ?>
 
@@ -158,6 +168,7 @@ if($categoryPlant =="cacti") {
                     <option value="cacti" <?php if($categoryPlant == "cacti") echo "selected"; ?>><?=$cactus[$_SESSION['language']]?></option>
                     <option value="outdoors" <?php if($categoryPlant == "outdoors") echo "selected"; ?>><?=$garden[$_SESSION['language']]?></option>
                     <option value="tropicals" <?php if($categoryPlant == "tropicals") echo "selected"; ?>><?=$tropical[$_SESSION['language']]?></option>
+                    <option value="aquatics" <?php if($categoryPlant == "aquatics") echo "selected"; ?>><?=$aquatic[$_SESSION['language']]?></option>
                   </select>
                 </div>
                 <div class="form-group col-md-4">

@@ -36,6 +36,19 @@ while($row = $stmt->fetch()){
     array_push($plantName, $row['plantName']);
     array_push($category, $row['category']);
 };
+
+if(time()-$_SESSION['timeOut'] > 3000) 
+{ 
+  $lang = $_SESSION['language'];
+  session_unset(); 
+  session_destroy(); 
+?>
+  <script type="text/javascript">
+  alert("<?=$loginAgain[$lang]?>");
+  window.location.href = "login.php";
+  </script>
+  <?php
+} 
 ?>
 
 <!DOCTYPE html>

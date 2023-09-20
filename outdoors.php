@@ -32,6 +32,7 @@ $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
 $_SESSION['successDeleteTropical'] = false;
 $_SESSION['successDeleteCacti'] = false;
+$_SESSION['successDeleteAquatic'] = false;
 
 $outdoorName = array();
 $outdoorDescription = array();
@@ -97,8 +98,8 @@ while($row = $stmt->fetch()){
           <h1><?=$ourOutdoor[$_SESSION['language']]?></h1>
           <h2><?=$ourOutdoorDef[$_SESSION['language']]?></h2>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="img/tomato.png" class="img-fluid animated"  width="400" height="400" alt="">
+        <div class="col-lg-6 order-1 order-lg-2" style="text-align:center;">
+          <img src="img/sprout.png" class="img-fluid" data-aos="zoom-out" width="200" height="200" data-aos-delay="100" alt="">
         </div>
       </div>
     </div>

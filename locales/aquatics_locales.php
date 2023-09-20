@@ -3,13 +3,13 @@ $loginAgain = array(
     "en"=>"Oops, it's been too long, please log in again!",
     "fr"=>"Oops, ca fait trop longtemps, reconnecter vous!"
 );
-$ourTropicals= array(
-    "en"=>"Our tropical plants",
-    "fr"=>"Nos plantes tropicales"
+$ourAquatics= array(
+    "en"=>"Our aquatic plants",
+    "fr"=>"Nos plantes aquatiques"
 );
-$ourTropicalsDef= array(
-    "en"=>"Find our most beloved tropicals here!",
-    "fr"=>"Trouvez nos plantes tropicales les plus appréciées ici!"
+$ourAquaticsDef= array(
+    "en"=>"Find our most beloved aquatics here!",
+    "fr"=>"Trouvez nos plantes aquatiques les plus appréciées ici!"
 );
 $addToCart= array(
     "en"=>"Add to cart", 
@@ -20,8 +20,8 @@ $outOfStock= array(
     "fr"=>"Hors stock"
 );
 $success= array(
-    "en"=>"Tropical plant successfully deleted", 
-    "fr"=>"Plante tropicale supprimée avec succès"
+    "en"=>"Aquatic plant successfully deleted", 
+    "fr"=>"Plante aquatique supprimée avec succès"
 );
 $manage= array(
     "en"=>"Manage", 

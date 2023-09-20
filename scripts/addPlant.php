@@ -98,6 +98,28 @@ window.location.href = "../add.php";
             <?php
         }
     }
+    if($category == "aquatics") {
+        $stmt = $pdo->prepare("SELECT aquaticName FROM dbo.aquatics WHERE aquaticName = ?");
+        $stmt->execute([$name]);
+        while($row = $stmt->fetch()){
+            $result = $row['aquaticName'];
+        }
+        if($result == null){
+            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
+            $stmtOutdoors->execute([$name,$description,$quantity,$price]);
+            $_SESSION['added'] = true;
+            $_SESSION['exists'] = false;
+            header("Location: ../add.php");
+        } else {
+            $_SESSION['exists'] = true;
+            $_SESSION['added'] = false;
+            ?>
+            <script type="text/javascript">
+            window.location.href = "../add.php";
+            </script>
+            <?php
+        }
+    }
 }
 
 ?>

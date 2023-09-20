@@ -75,6 +75,10 @@ $garden= array(
     "en"=>"Garden", 
     "fr"=>"Jardin"
 );
+$aquatic= array(
+    "en"=>"Aquatic", 
+    "fr"=>"Aquatique"
+);
 $oops= array(
     "en"=>"Oops! ", 
     "fr"=>"Oops! "
