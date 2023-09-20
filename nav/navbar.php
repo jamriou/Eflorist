@@ -30,17 +30,15 @@ if(!isset($_SESSION['authenticated'])){
       <li><a href="cacti.php?page=1"><?=$cacti[$_SESSION['language']]?></a></li>
       <li><a href="outdoors.php?page=1"><?=$outdoors[$_SESSION['language']]?></a></li>
       <li><a href="aquatics.php?page=1"><?=$aquatics[$_SESSION['language']]?></a></li>   
-      <li><a href="cart.php"><?=$cart[$_SESSION['language']]?></a></li>   
-      <li>   
+      <li><a href="cart.php"><?=$cart[$_SESSION['language']]?></a></li>    
       <?php 
         if(!isset($_SESSION['authenticated'])) {?>
         <a href="login.php"><?=$login[$_SESSION['language']]?></a>
         <?php }
         if(isset($_SESSION['authenticated'])) {?>
-        <a href="profile.php"><?=$profile[$_SESSION['language']]?></a>
-        <a href="scripts/logout.php"><?=$logout[$_SESSION['language']]?></a>
+        <li><a href="profile.php"><?=$profile[$_SESSION['language']]?></a></li>
+        <li><a href="scripts/logout.php"><?=$logout[$_SESSION['language']]?></a></li>
       <?php } ?>
-      </li>
     </ul>
   </nav><!-- .navbar -->
 

@@ -40,6 +40,6 @@ $welcome= array(
 );
 $profile= array(
     "en"=>"Your profile", 
-    "fr"=>"Votre profile"
+    "fr"=>"Votre profil"
 );
 ?>
