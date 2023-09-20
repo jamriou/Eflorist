@@ -113,20 +113,24 @@ if(time()-$_SESSION['timeOut'] > 3000)
                 </div>
                 <div class="form-group col-md-4">
                   <label for="name"><?=$quantity[$_SESSION['language']]?></label>
-                  <input type="number" class="form-control" name="quantity" min=0 id="quantity" placeholder="0" data-rule="required" data-msg="Please enter a valid number" />
+                  <input type="number" class="form-control" name="quantity" min=0 maxlength="3" id="quantity" placeholder="0" data-rule="required" data-msg="Please enter a valid number" />
                 </div>
                 <div class="form-group col-md-4">
                   <label for="name"><?=$price[$_SESSION['language']]?></label>
-                  <input type="number" step="0.01" class="form-control" name="price" min=0 id="price" placeholder="1.99" data-rule="required" data-msg="Please enter a valid number" />
+                  <input type="number" step="0.01" class="form-control" name="price" min=0 maxlength="7" id="price" placeholder="1.99" data-rule="required" data-msg="Please enter a valid number" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="name"><?=$name[$_SESSION['language']]?></label>
-                <input type="text" class="form-control" name="name" id="name" data-rule="minlen:4" placeholder="ex: Tradescantia Spathacea" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="name" id="name" data-rule="minlen:4" maxlength="100" placeholder="ex: Tradescantia Spathacea" data-msg="Please enter at least 8 chars of subject" />
               </div>
               <div class="form-group">
-                <label for="name"><?=$description[$_SESSION['language']]?></label>
-                <textarea class="form-control" name="description" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"></textarea>
+                <label for="name"><?=$descriptionfr[$_SESSION['language']]?></label>
+                <textarea class="form-control" name="descriptionfr" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="name"><?=$descriptionen[$_SESSION['language']]?></label>
+                <textarea class="form-control" name="descriptionen" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"></textarea>
               </div>
               <div class="text-center"><button type="submit"><?=$add[$_SESSION['language']]?></button></div>
             </form>

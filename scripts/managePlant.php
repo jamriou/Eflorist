@@ -22,7 +22,8 @@ $OGcategory = $_GET['category'];
 $category = $_POST['category'];
 $quantity = $_POST['quantity'];
 $name = $_POST['name'];
-$description = $_POST['description'];
+$description = $_POST['descriptionen'];
+$descriptionFr = $_POST['descriptionfr'];
 $price = $_POST['price'];
 
 echo $OGcategory;
@@ -31,10 +32,11 @@ echo $category ;
 echo $quantity ;
 echo $name ;
 echo $description ;
+echo $descriptionFr ;
 echo $price ;
 
 #checks if the html form is filled
-if(empty($_POST['category']) || $_POST['quantity'] < 0 || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price'])){
+if(empty($_POST['category']) || $_POST['quantity'] < 0 || empty($_POST['name']) || empty($_POST['descriptionen']) || empty($_POST['descriptionfr']) || empty($_POST['price'])){
 ?>
 <script type="text/javascript">
 alert("<?= $fillAll[$_SESSION["language"]]?>");
@@ -46,8 +48,8 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
         echo "OGcategory == tropicals";
         if($category == "tropicals") {
             echo "category == tropicals";
-            $stmtUpdate = $pdo->prepare("UPDATE dbo.tropicals SET tropicalName = ?, tropicalDescription = ?, tropicalQuantity = ?, tropicalPrice = ? WHERE tropicalName = ?");
-            $result = $stmtUpdate->execute([$name, $description, $quantity, $price, $OGname]);
+            $stmtUpdate = $pdo->prepare("UPDATE dbo.tropicals SET tropicalName = ?, tropicalDescription = ?, tropicalDescriptionFr = ?, tropicalQuantity = ?, tropicalPrice = ? WHERE tropicalName = ?");
+            $result = $stmtUpdate->execute([$name, $description, $descriptionFr, $quantity, $price, $OGname]);
             header("Location: ../tropicals.php?page=1");
         }else{
             echo "not a tropical";
@@ -57,21 +59,21 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
             //add to new category
             if($category == "cacti") {
                 echo "in cacti";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiDescriptionFr,cactiQuantity,cactiPrice) VALUES (?,?,?,?,?)");
+                $stmtCacti->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../cacti.php?page=1");
             }
             if($category == "outdoors") {
                 echo "in outdoors";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorDescriptionFr,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../outdoors.php?page=1");
             }
             if($category == "aquatics") {
                 echo "in aquatics";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
-                header("Location: ../outdoors.php?page=1");
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticDescriptionFr,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
+                header("Location: ../aquatics.php?page=1");
             }
         }
     }
@@ -79,8 +81,8 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
         echo "OGcategory == cacti";
         if($category == "cacti") {
             echo "category == cacti";
-            $stmtUpdate = $pdo->prepare("UPDATE dbo.cactis SET cactiName = ?, cactiDescription = ?, cactiQuantity = ?, cactiPrice = ? WHERE cactiName = ?");
-            $result = $stmtUpdate->execute([$name, $description, $quantity, $price, $OGname]);
+            $stmtUpdate = $pdo->prepare("UPDATE dbo.cactis SET cactiName = ?, cactiDescription = ?, cactiDescriptionFr = ?, cactiQuantity = ?, cactiPrice = ? WHERE cactiName = ?");
+            $result = $stmtUpdate->execute([$name, $description, $descriptionFr, $quantity, $price, $OGname]);
             header("Location: ../cacti.php?page=1");
         }else{
             echo "not a cacti";
@@ -90,21 +92,21 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
             //add to new category
             if($category == "tropicals") {
                 echo "in tropicals";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalDescriptionFr,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../tropicals.php?page=1");
             }
             if($category == "outdoors") {
                 echo "in outdoors";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorDescriptionFr,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../outdoors.php?page=1");
             }
             if($category == "aquatics") {
                 echo "in aquatics";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
-                header("Location: ../outdoors.php?page=1");
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,,aquaticDescription,aquaticDescriptionFr,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
+                header("Location: ../aquatics.php?page=1");
             }
         }
     }
@@ -112,8 +114,8 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
         echo "OGcategory == outdoors";
         if($category == "outdoors") {
             echo "category == outdoors";
-            $stmtUpdate = $pdo->prepare("UPDATE dbo.outdoors SET outdoorName = ?, outdoorDescription = ?, outdoorQuantity = ?, outdoorPrice = ? WHERE outdoorName = ?");
-            $result = $stmtUpdate->execute([$name, $description, $quantity, $price, $OGname]);
+            $stmtUpdate = $pdo->prepare("UPDATE dbo.outdoors SET outdoorName = ?, outdoorDescription = ?, outdoorDescriptionFr = ?, outdoorQuantity = ?, outdoorPrice = ? WHERE outdoorName = ?");
+            $result = $stmtUpdate->execute([$name, $description, $descriptionFr, $quantity, $price, $OGname]);
             header("Location: ../outdoors.php?page=1");
         }else{
             echo "not a outdoor";
@@ -123,21 +125,21 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
             //add to new category
             if($category == "cacti") {
                 echo "in cacti";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiDescriptionFr,cactiQuantity,cactiPrice) VALUES (?,?,?,?,?)");
+                $stmtCacti->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../cacti.php?page=1");
             }
             if($category == "tropicals") {
                 echo "in tropicals";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalDescriptionFr,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../tropicals.php?page=1");
             }
             if($category == "aquatics") {
                 echo "in aquatics";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
-                header("Location: ../outdoors.php?page=1");
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,,aquaticDescription,aquaticDescriptionFr,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
+                header("Location: ../aquatics.php?page=1");
             }
         }
     }
@@ -145,8 +147,8 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
         echo "OGcategory == aquatics";
         if($category == "aquatics") {
             echo "category == aquatics";
-            $stmtUpdate = $pdo->prepare("UPDATE dbo.aquatics SET aquaticName = ?, aquaticDescription = ?, aquaticQuantity = ?, aquaticPrice = ? WHERE aquaticName = ?");
-            $result = $stmtUpdate->execute([$name, $description, $quantity, $price, $OGname]);
+            $stmtUpdate = $pdo->prepare("UPDATE dbo.aquatics SET aquaticName = ?, aquaticDescription = ?,  aquaticDescriptionFr = ?, aquaticQuantity = ?, aquaticPrice = ? WHERE aquaticName = ?");
+            $result = $stmtUpdate->execute([$name, $description, $descriptionFr, $quantity, $price, $OGname]);
             header("Location: ../aquatics.php?page=1");
         }else{
             echo "not a aquatic";
@@ -156,20 +158,20 @@ alert("<?= $fillAll[$_SESSION["language"]]?>");
             //add to new category
             if($category == "cacti") {
                 echo "in cacti";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiDescriptionFr,cactiQuantity,cactiPrice) VALUES (?,?,?,?,?)");
+                $stmtCacti->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../cacti.php?page=1");
             }
             if($category == "tropicals") {
                 echo "in tropicals";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalDescriptionFr,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?,?)");
+                $stmtTropical->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../tropicals.php?page=1");
             }
             if($category == "outdoors") {
                 echo "in outdoors";
-                $stmtTropical = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
-                $stmtTropical->execute([$name,$description,$quantity,$price]);
+                $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorDescriptionFr,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?,?)");
+                $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
                 header("Location: ../outdoors.php?page=1");
             }
         }

@@ -37,15 +37,17 @@ $_SESSION['successDeleteAquatic'] = false;
 
 $tropicalName = array();
 $tropicalDescription = array();
+$tropicalDescriptionFr = array();
 $tropicalQuantity = array();
 $tropicalPrice = array();
 $totalPlants = 0;
 
-$stmt = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalQuantity, tropicalPrice FROM dbo.tropicals ORDER BY tropicalName DESC");
+$stmt = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalDescriptionFr, tropicalQuantity, tropicalPrice FROM dbo.tropicals ORDER BY tropicalName DESC");
 $result = $stmt->execute();
 while($row = $stmt->fetch()){
     array_push($tropicalName, $row['tropicalName']);
     array_push($tropicalDescription, $row['tropicalDescription']);
+    array_push($tropicalDescriptionFr, $row['tropicalDescriptionFr']);
     array_push($tropicalQuantity, $row['tropicalQuantity']);
     array_push($tropicalPrice, $row['tropicalPrice']);
     $totalPlants = $totalPlants + 1; 
@@ -137,7 +139,14 @@ while($row = $stmt->fetch()){
             <div class="icon-box">
               <img></img>
               <h4 class="title"><?php echo strip_tags($tropicalName[$i]) ?></h4>
-              <p class="description"><?php echo strip_tags($tropicalDescription[$i]) ?></p>
+              <?php if($_SESSION['language'] == 'fr') {
+                ?>
+              <p class="descriptionfr"><?php echo strip_tags($tropicalDescriptionFr[$i]) ?></p>
+              <?php } else { ?>
+              <p class="descriptionen"><?php echo strip_tags($tropicalDescription[$i]) ?></p>
+              <?php
+              }
+              ?>
               <h4 class="title">$ <?php echo strip_tags($tropicalPrice[$i]) ?></h4>
               <?php 
               if($tropicalQuantity[$i] > 0) { ?>

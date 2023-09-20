@@ -38,41 +38,45 @@ $plantName = $_GET['name'];
 $categoryPlant = $_GET['category'];
 
 if($categoryPlant =="tropicals") {
- $stmt = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalQuantity, tropicalPrice FROM dbo.tropicals WHERE tropicalName = ?");
+ $stmt = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalDescriptionFr, tropicalQuantity, tropicalPrice FROM dbo.tropicals WHERE tropicalName = ?");
   $result = $stmt->execute([$plantName]);
   while($row = $stmt->fetch()){
      $name = $row['tropicalName'];
      $description = $row['tropicalDescription'];
+     $descriptionFr = $row['tropicalDescriptionFr'];
      $quantity = $row['tropicalQuantity'];
      $price = $row['tropicalPrice'];
   };
 }
 if($categoryPlant =="cacti") {
-  $stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis WHERE cactiName = ?");
+  $stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiDescriptionFr, cactiQuantity, cactiPrice FROM dbo.cactis WHERE cactiName = ?");
    $result = $stmt->execute([$plantName]);
    while($row = $stmt->fetch()){
       $name = $row['cactiName'];
       $description = $row['cactiDescription'];
+      $descriptionFr = $row['cactiDescriptionFr'];
       $quantity = $row['cactiQuantity'];
       $price = $row['cactiPrice'];
    };
  }
  if($categoryPlant =="outdoors") {
-  $stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorQuantity, outdoorPrice FROM dbo.outdoors WHERE outdoorName = ?");
+  $stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorDescriptionFr, outdoorQuantity, outdoorPrice FROM dbo.outdoors WHERE outdoorName = ?");
    $result = $stmt->execute([$plantName]);
    while($row = $stmt->fetch()){
       $name = $row['outdoorName'];
       $description = $row['outdoorDescription'];
+      $descriptionFr = $row['outdoorDescriptionFr'];
       $quantity = $row['outdoorQuantity'];
       $price = $row['outdoorPrice'];
    };
  }
  if($categoryPlant =="aquatics") {
-  $stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticQuantity, aquaticPrice FROM dbo.aquatics WHERE aquaticName = ?");
+  $stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticDescriptionFr, aquaticQuantity, aquaticPrice FROM dbo.aquatics WHERE aquaticName = ?");
    $result = $stmt->execute([$plantName]);
    while($row = $stmt->fetch()){
       $name = $row['aquaticName'];
       $description = $row['aquaticDescription'];
+      $descriptionFr = $row['aquaticDescriptionFr'];
       $quantity = $row['aquaticQuantity'];
       $price = $row['aquaticPrice'];
    };
@@ -181,8 +185,12 @@ if($categoryPlant =="cacti") {
                 <input type="text" class="form-control" name="name" id="name" value="<?=$name?>" placeholder="ex: Tradescantia Spathacea" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               </div>
               <div class="form-group">
-                <label for="name"><?=$descriptionForm[$_SESSION['language']]?></label>
-                <textarea class="form-control" name="description" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"><?=$description?></textarea>
+                <label for="name"><?=$descriptionen[$_SESSION['language']]?></label>
+                <textarea class="form-control" name="descriptionen" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"><?=$description?></textarea>
+              </div>
+              <div class="form-group">
+                <label for="name"><?=$descriptionfr[$_SESSION['language']]?></label>
+                <textarea class="form-control" name="descriptionfr" rows="10" data-rule="required" placeholder="<?=$descPH[$_SESSION['language']]?>" data-msg="Please write something to describe the plant"><?=$descriptionFr?></textarea>
               </div>
               <div class="text-center"><button type="submit"><?=$updated[$_SESSION['language']]?></button></div>
             </form>

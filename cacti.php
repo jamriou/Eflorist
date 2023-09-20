@@ -36,15 +36,17 @@ $_SESSION['successDeleteAquatic'] = false;
 
 $cactiName = array();
 $cactiDescription = array();
+$cactiDescriptionFr = array();
 $cactiQuantity = array();
 $cactiPrice = array();
 $totalPlants = 0;
 
-$stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis ORDER BY cactiName DESC");
+$stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiDescriptionFr, cactiQuantity, cactiPrice FROM dbo.cactis ORDER BY cactiName DESC");
 $result = $stmt->execute();
 while($row = $stmt->fetch()){
     array_push($cactiName, $row['cactiName']);
     array_push($cactiDescription, $row['cactiDescription']);
+    array_push($cactiDescriptionFr, $row['cactiDescriptionFr']);
     array_push($cactiQuantity, $row['cactiQuantity']);
     array_push($cactiPrice, $row['cactiPrice']);
     $totalPlants = $totalPlants + 1; 
@@ -132,7 +134,14 @@ while($row = $stmt->fetch()){
             <div class="icon-box">
               <img></img>
               <h4 class="title"><?php echo strip_tags($cactiName[$i]) ?></h4>
-              <p class="description"><?php echo strip_tags($cactiDescription[$i]) ?></p>
+              <?php if($_SESSION['language'] == 'fr') {
+                ?>
+              <p class="descriptionfr"><?php echo strip_tags($cactiDescriptionFr[$i]) ?></p>
+              <?php } else { ?>
+              <p class="descriptionen"><?php echo strip_tags($cactiDescription[$i]) ?></p>
+              <?php
+              }
+              ?>
               <h4 class="title">$ <?php echo strip_tags($cactiPrice[$i]) ?></h4>
               <?php 
               if($cactiQuantity[$i] > 0) { ?>

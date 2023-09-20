@@ -111,4 +111,12 @@ $descPH = array(
     "en"=>"Ex: Water daily, direct sunlight, lots of humidity, fertilize every blooming season.",
     "fr"=>"Ex: Arrosez tous les jours, lumière directe du soleil, beaucoup d'humidité, fertilisez à chaque saison de floraison."
 );
+$descriptionfr= array(
+    "en"=>"French Description (Care)", 
+    "fr"=>"Description Francaise (Soins)"
+);
+$descriptionen= array(
+    "en"=>"English Description (Care)", 
+    "fr"=>"Description anglaise (Soins)"
+);
 ?>

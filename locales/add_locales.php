@@ -47,9 +47,13 @@ $name= array(
     "en"=>"Name of plant", 
     "fr"=>"Nom de la plante"
 );
-$description= array(
-    "en"=>"Description (Care)", 
-    "fr"=>"Description (Soins)"
+$descriptionfr= array(
+    "en"=>"French Description (Care)", 
+    "fr"=>"Description Francaise (Soins)"
+);
+$descriptionen= array(
+    "en"=>"English Description (Care)", 
+    "fr"=>"Description anglaise (Soins)"
 );
 $add= array(
     "en"=>"Add plant!", 

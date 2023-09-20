@@ -36,15 +36,17 @@ $_SESSION['successDeleteAquatic'] = false;
 
 $outdoorName = array();
 $outdoorDescription = array();
+$outdoorDescriptionFr = array();
 $outdoorQuantity = array();
 $outdoorPrice = array();
 $totalPlants = 0;
 
-$stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorQuantity, outdoorPrice FROM dbo.outdoors ORDER BY outdoorName DESC");
+$stmt = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorDescriptionFr, outdoorQuantity, outdoorPrice FROM dbo.outdoors ORDER BY outdoorName DESC");
 $result = $stmt->execute();
 while($row = $stmt->fetch()){
     array_push($outdoorName, $row['outdoorName']);
     array_push($outdoorDescription, $row['outdoorDescription']);
+    array_push($outdoorDescriptionFr, $row['outdoorDescriptionFr']);
     array_push($outdoorQuantity, $row['outdoorQuantity']);
     array_push($outdoorPrice, $row['outdoorPrice']);
     $totalPlants = $totalPlants + 1; 
@@ -134,7 +136,14 @@ while($row = $stmt->fetch()){
             <div class="col-lg-4 col-md-6">
               <div class="icon-box">
                 <h4 class="title"><?php echo strip_tags($outdoorName[$i]) ?></h4>
-                <p class="description"><?php echo strip_tags($outdoorDescription[$i]) ?></p>
+                <?php if($_SESSION['language'] == 'fr') {
+                ?>
+                <p class="descriptionfr"><?php echo strip_tags($outdoorDescriptionFr[$i]) ?></p>
+                <?php } else { ?>
+                <p class="descriptionen"><?php echo strip_tags($outdoorDescription[$i]) ?></p>
+                <?php
+                }
+                ?>
                 <h4 class="title">$ <?php echo strip_tags($outdoorPrice[$i]) ?></h4>
                 <?php 
                 if($outdoorQuantity[$i] > 0) { ?>
