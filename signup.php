@@ -55,19 +55,19 @@ include "locales/signup_locales.php";
                   <form action="scripts/signup.php" method="post" name="registration">
                      <div class="form-group">
                         <label for="exampleInputEmail1"><?=$first[$_SESSION['language']]?></label>
-                        <input type="text"  name="first" class="form-control" id="first" aria-describedby="emailHelp" placeholder="<?=$firstPH[$_SESSION['language']]?>">
+                        <input type="text"  name="first" class="form-control" id="first" maxlength="30" aria-describedby="emailHelp" placeholder="<?=$firstPH[$_SESSION['language']]?>">
                      </div>
                      <div class="form-group">
                         <label for="exampleInputEmail1"><?=$last[$_SESSION['language']]?></label>
-                        <input type="text"  name="last" class="form-control" id="last" aria-describedby="emailHelp" placeholder="<?=$lastPH[$_SESSION['language']]?>">
+                        <input type="text"  name="last" class="form-control" id="last" maxlength="30" aria-describedby="emailHelp" placeholder="<?=$lastPH[$_SESSION['language']]?>">
                      </div>
                      <div class="form-group">
                         <label for="exampleInputEmail1"><?=$email[$_SESSION['language']]?></label>
-                        <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
+                        <input type="email" name="email"  class="form-control" id="email" maxlength="50" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
                      </div>
                      <div class="form-group">
                         <label for="exampleInputEmail1"><?=$password[$_SESSION['language']]?></label>
-                        <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
+                        <input type="password" name="password" id="password"  class="form-control" maxlength="50" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
                      </div>
                      <div class="form-group">
                         <p class="text-center"><?=$accept[$_SESSION['language']]?> <a href="#"><?=$terms[$_SESSION['language']]?></a></p>

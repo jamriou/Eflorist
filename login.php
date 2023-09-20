@@ -56,11 +56,11 @@ include "./locales/login_locales.php";
                <form action="scripts/login.php" method="post" name="login">
                   <div class="form-group">
                      <label for="exampleInputEmail1"><?=$email[$_SESSION['language']]?></label>
-                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
+                     <input type="email" name="email"  class="form-control" id="email" maxlength="50" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
                   </div>
                   <div class="form-group">
                      <label for="exampleInputEmail1"><?=$password[$_SESSION['language']]?></label>
-                     <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
+                     <input type="password" name="password" id="password"  maxlength="50" class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
                   </div>
                   <div class="col-md-12 text-center ">
                      <button type="submit" class="btn btn-block login-btn btn-primary"><?=$login[$_SESSION['language']]?></button>
