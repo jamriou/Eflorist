@@ -5,24 +5,13 @@ $loginAgain = array(
 );
 $profile= array(
     "en"=>"Your profile", 
-    "fr"=>"Votre profile"
+    "fr"=>"Votre profil"
 );
 $profileDef= array(
     "en"=>"Change your personnal information here and view your orders!", 
     "fr"=>"Changer vos coordonnés ici et visionners vos commandes!"
 );
-$location= array(
-    "en"=>"Location:", 
-    "fr"=>"Emplacement:"
-);
-$email= array(
-    "en"=>"Email:", 
-    "fr"=>"Courriel:"
-);
-$call= array(
-    "en"=>"Call:", 
-    "fr"=>"Téléphone:"
-);
+
 $findUs= array(
     "en"=>"You can find us here :", 
     "fr"=>"Vous pouvez nous trouver ici :"
@@ -43,7 +32,6 @@ $mobileL= array(
     "en"=>"Phone", 
     "fr"=>"Téléphone"
 );
-
 $addressL= array(
     "en"=>"Address", 
     "fr"=>"Adresse"
