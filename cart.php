@@ -50,7 +50,6 @@ if(time()-$_SESSION['timeOut'] > 3000)
   <?php
 } 
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="en">
