@@ -1,6 +1,10 @@
 <?php 
 session_start();
 include "locales/contactUs_locales.php";
+
+if(!isset($_SESSION["language"])){
+  $_SESSION["language"]= "fr";
+}
 ?>
 
 <!DOCTYPE html>

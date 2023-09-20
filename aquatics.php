@@ -11,7 +11,7 @@ try {
    }
 
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 if(!isset($_SESSION["successDeleteAquatic"])){
   $_SESSION["successDeleteAquatic"]= false;
@@ -37,15 +37,17 @@ $_SESSION['successDeleteGarden'] = false;
 
 $aquaticName = array();
 $aquaticDescription = array();
+$aquaticDescriptionFr = array();
 $aquaticQuantity = array();
 $aquaticPrice = array();
 $totalPlants = 0;
 
-$stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticQuantity, aquaticPrice FROM dbo.aquatics ORDER BY aquaticName DESC");
+$stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticDescriptionFr, aquaticQuantity, aquaticPrice FROM dbo.aquatics ORDER BY aquaticName DESC");
 $result = $stmt->execute();
 while($row = $stmt->fetch()){
     array_push($aquaticName, $row['aquaticName']);
     array_push($aquaticDescription, $row['aquaticDescription']);
+    array_push($aquaticDescriptionFr, $row['aquaticDescriptionFr']);
     array_push($aquaticQuantity, $row['aquaticQuantity']);
     array_push($aquaticPrice, $row['aquaticPrice']);
     $totalPlants = $totalPlants + 1; 
@@ -137,7 +139,14 @@ while($row = $stmt->fetch()){
             <div class="icon-box">
               <img></img>
               <h4 class="title"><?php echo strip_tags($aquaticName[$i]) ?></h4>
-              <p class="description"><?php echo strip_tags($aquaticDescription[$i]) ?></p>
+              <?php if($_SESSION['language'] == 'fr') {
+                ?>
+                <p class="descriptionfr"><?php echo strip_tags($aquaticDescriptionFr[$i]) ?></p>
+                <?php } else { ?>
+                <p class="descriptionen"><?php echo strip_tags($aquaticDescription[$i]) ?></p>
+                <?php
+                }
+                ?>
               <h4 class="title">$ <?php echo strip_tags($aquaticPrice[$i]) ?></h4>
               <?php 
               if($aquaticQuantity[$i] > 0) { ?>

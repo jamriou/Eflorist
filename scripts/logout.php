@@ -5,7 +5,7 @@ session_destroy();
 session_start();
 $_SESSION['language'] = $language;
 $_SESSION['checkedOut'] = null;
-$_SESSION['isAdmin'] = $false;
+$_SESSION['isAdmin'] = false;
 ?>
 <script type="text/javascript">
 window.location.href = "../index.php";

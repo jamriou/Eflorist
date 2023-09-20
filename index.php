@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 
 include "locales/index_locales.php";

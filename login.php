@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 
 include "./locales/login_locales.php";
@@ -10,6 +10,16 @@ include "./locales/login_locales.php";
 ?>
 
 <head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+   <title>eFlorist - <?=$login[$_SESSION['language']]?></title>
+   <link href="img/favicon.ico" rel="icon">
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
+
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,18 +27,18 @@ include "./locales/login_locales.php";
    <title>eFlorist - <?=$login[$_SESSION['language']]?></title>
    <link href="img/favicon.ico" rel="icon">
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+   <!-- Vendor CSS Files -->
+   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="vendor/aos/aos.css" rel="stylesheet">
+   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="css/index.css" rel="stylesheet">
-  <link href="css/LoginSignupCSS.css" rel="stylesheet">
+   <!-- Template Main CSS File -->
+   <link href="css/index.css" rel="stylesheet">
+   <link href="css/LoginSignupCSS.css" rel="stylesheet">
 </head>
 
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
@@ -46,11 +56,11 @@ include "./locales/login_locales.php";
                <form action="scripts/login.php" method="post" name="login">
                   <div class="form-group">
                      <label for="exampleInputEmail1"><?=$email[$_SESSION['language']]?></label>
-                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
+                     <input type="email" name="email"  class="form-control" id="email" maxlength="50" aria-describedby="emailHelp" placeholder="<?=$emailPH[$_SESSION['language']]?>">
                   </div>
                   <div class="form-group">
                      <label for="exampleInputEmail1"><?=$password[$_SESSION['language']]?></label>
-                     <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
+                     <input type="password" name="password" id="password"  maxlength="50" class="form-control" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
                   </div>
                   <div class="col-md-12 text-center ">
                      <button type="submit" class="btn btn-block login-btn btn-primary"><?=$login[$_SESSION['language']]?></button>

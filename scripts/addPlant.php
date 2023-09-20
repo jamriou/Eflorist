@@ -20,11 +20,12 @@ header("Location: ..//index.php");
 $category = $_POST['category'];
 $quantity = $_POST['quantity'];
 $name = $_POST['name'];
-$description = $_POST['description'];
+$description = $_POST['descriptionen'];
+$descriptionFr = $_POST['descriptionfr'];
 $price = $_POST['price'];
 
 #checks if the html form is filled
-if(empty($_POST['category']) || empty($_POST['quantity']) || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price'])){
+if(empty($_POST['category']) || empty($_POST['quantity']) || empty($_POST['name']) || empty($_POST['descriptionen'])|| empty($_POST['descriptionfr']) || empty($_POST['price'])){
 ?>
 <script type="text/javascript">
 alert("<?= $fillAll[$_SESSION["language"]]?>");
@@ -39,8 +40,8 @@ window.location.href = "../add.php";
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?)");
-            $stmtTropical->execute([$name,$description,$quantity,$price]);
+            $stmtTropical = $pdo->prepare("INSERT INTO dbo.tropicals (tropicalName,tropicalDescription,tropicalDescriptionFr,tropicalQuantity,tropicalPrice) VALUES (?,?,?,?,?)");
+            $stmtTropical->execute([$name,$description,$descriptionFr,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
             header("Location: ../add.php");
@@ -61,8 +62,8 @@ window.location.href = "../add.php";
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiQuantity,cactiPrice) VALUES (?,?,?,?)");
-            $stmtCacti->execute([$name,$description,$quantity,$price]);
+            $stmtCacti = $pdo->prepare("INSERT INTO dbo.cactis (cactiName,cactiDescription,cactiDescriptionFr,cactiQuantity,cactiPrice) VALUES (?,?,?,?,?)");
+            $stmtCacti->execute([$name,$description,$descriptionFr,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
             header("Location: ../add.php");
@@ -83,8 +84,8 @@ window.location.href = "../add.php";
             $result = $row['tropicalName'];
         }
         if($result == null){
-            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?)");
-            $stmtOutdoors->execute([$name,$description,$quantity,$price]);
+            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.outdoors (outdoorName,outdoorDescription,outdoorDescriptionFr,outdoorQuantity,outdoorPrice) VALUES (?,?,?,?,?)");
+            $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
             header("Location: ../add.php");
@@ -105,8 +106,8 @@ window.location.href = "../add.php";
             $result = $row['aquaticName'];
         }
         if($result == null){
-            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,aquaticDescription,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?)");
-            $stmtOutdoors->execute([$name,$description,$quantity,$price]);
+            $stmtOutdoors = $pdo->prepare("INSERT INTO dbo.aquatics (aquaticName,,aquaticDescription,aquaticDescriptionFr,aquaticQuantity,aquaticPrice) VALUES (?,?,?,?,?)");
+            $stmtOutdoors->execute([$name,$description,$descriptionFr,$quantity,$price]);
             $_SESSION['added'] = true;
             $_SESSION['exists'] = false;
             header("Location: ../add.php");

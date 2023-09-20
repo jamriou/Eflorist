@@ -11,7 +11,7 @@ try {
    }
   
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 if(!isset($_SESSION["checkedOut"])){
   $_SESSION["checkedOut"]= false;
@@ -119,13 +119,15 @@ if($_SESSION['authenticated']) {
 
                 $tropicalName = "";
                 $tropicalDescription = "";
+                $tropicalDescriptionFr = "";
                 $tropicalQuantity = 0;
                 $tropicalPrice = "";
-                $stmtTrop = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalQuantity, tropicalPrice FROM dbo.tropicals WHERE tropicalName = ?");
+                $stmtTrop = $pdo->prepare("SELECT tropicalName, tropicalDescription, tropicalDescriptionFr, tropicalQuantity, tropicalPrice FROM dbo.tropicals WHERE tropicalName = ? ORDER BY tropicalName DESC");
                 $result = $stmtTrop->execute([$plantName[$i]]);
                 while($row = $stmtTrop->fetch()){
                   $tropicalName = $row['tropicalName'];
                   $tropicalDescription = $row['tropicalDescription'];
+                  $tropicalDescriptionFr = $row['tropicalDescriptionFr'];
                   $tropicalQuantity = $row['tropicalQuantity'];
                   $tropicalPrice = $row['tropicalPrice'];
                   $totalPlant += (float)$tropicalPrice;
@@ -135,7 +137,14 @@ if($_SESSION['authenticated']) {
                   <div class="icon-box">
                     <img></img>
                     <h4 class="title"><?php echo strip_tags($tropicalName) ?></h4>
-                    <p class="description"><?php echo strip_tags($tropicalDescription)?></p>
+                    <?php if($_SESSION['language'] == 'fr') {
+                      ?>
+                    <p class="descriptionfr"><?php echo strip_tags($tropicalDescriptionFr) ?></p>
+                    <?php } else { ?>
+                    <p class="descriptionen"><?php echo strip_tags($tropicalDescription) ?></p>
+                    <?php
+                    }
+                    ?>
                     <h4 class="title">$ <?php echo strip_tags($tropicalPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$tropicalName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
@@ -146,13 +155,15 @@ if($_SESSION['authenticated']) {
 
                 $cactiName = "";
                 $cactiDescription = "";
+                $cactiDescriptionFr = "";
                 $cactiQuantity = 0;
                 $cactiPrice = "";
-                $stmtTrop = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis WHERE cactiName = ?");
+                $stmtTrop = $pdo->prepare("SELECT cactiName, cactiDescription, cactiDescriptionFr, cactiQuantity, cactiPrice FROM dbo.cactis WHERE cactiName = ? ORDER BY cactiName DESC");
                 $result = $stmtTrop->execute([$plantName[$i]]);
                 while($row = $stmtTrop->fetch()){
                   $cactiName = $row['cactiName'];
                   $cactiDescription = $row['cactiDescription'];
+                  $cactiDescriptionFr = $row['cactiDescriptionFr'];
                   $cactiQuantity = $row['cactiQuantity'];
                   $cactiPrice = $row['cactiPrice'];
                   $totalPlant += (float)$cactiPrice;
@@ -161,8 +172,15 @@ if($_SESSION['authenticated']) {
                 <div class="col-lg-4 col-md-6">
                   <div class="icon-box">
                     <img></img>
-                    <h4 class="title"><?php echo strip_tags($tropicalPrice)?></h4>
-                    <p class="description"><?php echo strip_tags($cactiDescription)?></p>
+                    <h4 class="title"><?php echo strip_tags($cactiName)?></h4>
+                    <?php if($_SESSION['language'] == 'fr') {
+                      ?>
+                    <p class="descriptionfr"><?php echo strip_tags($cactiDescriptionFr) ?></p>
+                    <?php } else { ?>
+                    <p class="descriptionen"><?php echo strip_tags($cactiDescription) ?></p>
+                    <?php
+                    }
+                    ?>
                     <h4 class="title">$ <?php echo strip_tags($cactiPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$cactiName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
@@ -173,13 +191,15 @@ if($_SESSION['authenticated']) {
 
                 $outdoorName = "";
                 $outdoorDescription = "";
+                $outdoorDescriptionFr = "";
                 $outdoorQuantity = 0;
                 $outdoorPrice = "";
-                $stmtTrop = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorQuantity, outdoorPrice FROM dbo.outdoors WHERE outdoorName = ?");
+                $stmtTrop = $pdo->prepare("SELECT outdoorName, outdoorDescription, outdoorDescriptionFr, outdoorQuantity, outdoorPrice FROM dbo.outdoors WHERE outdoorName = ? ORDER BY outdoorName DESC");
                 $result = $stmtTrop->execute([$plantName[$i]]);
                 while($row = $stmtTrop->fetch()){
                   $outdoorName = $row['outdoorName'];
                   $outdoorDescription = $row['outdoorDescription'];
+                  $outdoorDescriptionFr = $row['outdoorDescriptionFr'];
                   $outdoorQuantity = $row['outdoorQuantity'];
                   $outdoorPrice = $row['outdoorPrice'];              
                   $totalPlant += (float)$outdoorPrice;
@@ -189,9 +209,52 @@ if($_SESSION['authenticated']) {
                   <div class="icon-box">
                     <img></img>
                     <h4 class="title"><?php echo strip_tags($outdoorName)?></h4>
-                    <p class="description"><?php echo strip_tags($outdoorDescription)?></p>
+                    <?php if($_SESSION['language'] == 'fr') {
+                    ?>
+                    <p class="descriptionfr"><?php echo strip_tags($outdoorDescriptionFr) ?></p>
+                    <?php } else { ?>
+                    <p class="descriptionen"><?php echo strip_tags($outdoorDescription) ?></p>
+                    <?php
+                    }
+                    ?>
                     <h4 class="title">$ <?php echo strip_tags($outdoorPrice)?></h4>
                     <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$outdoorName?>"><?=$remove[$_SESSION['language']]?></a></h4>
+                  </div>
+                </div>
+              <?php
+            };
+              if($category[$i] == "aquatics") {
+
+                $aquaticName = "";
+                $aquaticDescription = "";
+                $aquaticDescriptionFr = "";
+                $aquaticQuantity = 0;
+                $aquaticPrice = "";
+                $stmtTrop = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticDescriptionFr, aquaticQuantity, aquaticPrice FROM dbo.aquatics WHERE aquaticName = ? ORDER BY aquaticName DESC");
+                $result = $stmtTrop->execute([$plantName[$i]]);
+                while($row = $stmtTrop->fetch()){
+                  $aquaticName = $row['aquaticName'];
+                  $aquaticDescription = $row['aquaticDescription'];
+                  $aquaticDescriptionFr = $row['aquaticDescriptionFr'];
+                  $aquaticQuantity = $row['aquaticQuantity'];
+                  $aquaticPrice = $row['aquaticPrice'];              
+                  $totalPlant += (float)$aquaticPrice;
+                }; 
+                ?>
+                <div class="col-lg-4 col-md-6">
+                  <div class="icon-box">
+                    <img></img>
+                    <h4 class="title"><?php echo strip_tags($aquaticName)?></h4>
+                    <?php if($_SESSION['language'] == 'fr') {
+                    ?>
+                    <p class="descriptionfr"><?php echo strip_tags($aquaticDescriptionFr) ?></p>
+                    <?php } else { ?>
+                    <p class="descriptionen"><?php echo strip_tags($aquaticDescription) ?></p>
+                    <?php
+                    }
+                    ?>
+                    <h4 class="title">$ <?php echo strip_tags($aquaticPrice)?></h4>
+                    <h4 class="titleRed"><a href="scripts/removeCart.php?name=<?=$aquaticName?>"><?=$remove[$_SESSION['language']]?></a></h4>
                   </div>
                 </div>
               <?php
