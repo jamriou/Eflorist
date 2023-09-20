@@ -9,34 +9,33 @@ include "./locales/login_locales.php";
 
 ?>
 
-<style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-}
-</style>
-
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-    <title>eFlorist - <?=$login[$_SESSION['language']]?></title>
-    <link href="img/favicon.ico" rel="icon">
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!------ Include the above in your HEAD tag ---------->
+   <title>eFlorist - <?=$login[$_SESSION['language']]?></title>
+   <link href="img/favicon.ico" rel="icon">
 
-      <!-- Template Main CSS File -->
+  <!-- Vendor CSS Files -->
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/LoginSignupCSS.css" rel="stylesheet">
 </head>
 
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-<link href="css/LoginSignupCSS.css" rel="stylesheet">
 
 <body class="d-flex flex-column min-vh-100">
-    <div class="container">
-        <div class="row">
+   <div class="container">
+      <div class="row">
 			<div class="col-md-5 mx-auto">
 				<div class="myform form ">
 					 <div class="logo mb-3">
@@ -67,12 +66,11 @@ include "./locales/login_locales.php";
                   <p class="text-center"><?=$noAccount[$_SESSION['language']]?> <a href="signup.php" id="signup"><?=$signUp[$_SESSION['language']]?></a></p>
                   <p class="text-center"><a href="index.php" id="index"><?=$back[$_SESSION['language']]?> </a></p>
                </div>
-				</div>
+            </div> 
+			</div>
 		</div>
    </div>   
-         
+   <footer class="footer" id="footer">
+      <?php include "nav/footer.php"; ?>
+   </footer><!-- End Footer -->  
 </body>
-
-<footer class="footer" id="footer">
-   <?php include "nav/footer.php"; ?>
-</footer><!-- End Footer -->
