@@ -93,7 +93,7 @@ if(!isset($_SESSION["language"])){
                         <div class="col-md-6"><label class="labels"><?=$surnameL[$_SESSION['language']]?></label><input type="last" name="last" id="last" class="form-control" placeholder="<?=$last?>" value="<?=$last?>"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels"><?=$mobileL[$_SESSION['language']]?></label><input type="phone" name="phone" id="phone" class="form-control" placeholder="Not available" value="" disabled></div>
+                        <div class="col-md-12"><label class="labels"><?=$mobileL[$_SESSION['language']]?></label><input type="phone" name="phone" id="phone" class="form-control" placeholder="<?=$notAvailable[$_SESSION['language']]?>" value="" disabled></div>
                         <div class="col-md-12"><label class="labels"><?=$addressL[$_SESSION['language']]?></label><input type="street" name="street" id="street" class="form-control" placeholder="<?=$street?>" value="<?=$street?>"></div>
                         <div class="col-md-12"><label class="labels"><?=$cityL[$_SESSION['language']]?></label><input type="city" name="city" id="city" class="form-control" placeholder="<?=$city?>" value="<?=$city?>"></div>
                         <div class="col-md-12"><label class="labels"><?=$postCodeL[$_SESSION['language']]?></label><input type="postCode" name="postCode" id="postCode" class="form-control" placeholder="<?=$postCode?>" value="<?=$postCode?>"></div>

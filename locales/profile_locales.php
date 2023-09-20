@@ -90,6 +90,10 @@ $confirm = array(
 );
 $settings = array(
     "en"=>"Profile Settings",
-    "fr"=>"Modifier Coordonnés"
+    "fr"=>"Modifier Coordonnées"
+);
+$notAvailable = array(
+    "en"=>"Not available",
+    "fr"=>"Non disponible"
 );
 ?>
