@@ -1,6 +1,10 @@
 <?php 
 session_start();
 include "locales/profile_locales.php";
+
+$first = $_SESSION['first'];
+$last = $_SESSION['last'];
+$email = $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +38,7 @@ include "locales/profile_locales.php";
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -49,33 +54,53 @@ include "locales/profile_locales.php";
       <div class="container">
 
         <div class="section-title">
-          <span><?=$contact[$_SESSION['language']]?></span>
-          <h2><?=$contact[$_SESSION['language']]?></h2>
-          <p><?=$contactDef[$_SESSION['language']]?></p>
+          <span><?=$profile[$_SESSION['language']]?></span>
+          <h2><?=$profile[$_SESSION['language']]?></h2>
+          <p><?=$profileDef[$_SESSION['language']]?></p>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4><?=$location[$_SESSION['language']]?></h4>
-                <p>7 Flower Street, Maroubra NSW 2035, Australia</p>
+        <div class="container rounded bg-white mt-5 mb-5">
+          <div class="row">
+              <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                  <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                  <span class="font-weight-bold"><?=$first?> <?=$last?></span>
+                  <span class="text-black-50"><?=$email?></span>
+                  <span class="text-black-50"><?=$email?></span>
+                  <span> </span>
+                </div>
               </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4><?=$email[$_SESSION['language']]?></h4>
-                <p>eflorist@support.ca</p>
+              <div class="col-md-5 border-right">
+                  <div class="p-3 py-5">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                          <h4 class="text-right">Profile Settings</h4>
+                      </div>
+                      <div class="row mt-2">
+                          <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                          <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                          <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                          <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                          <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                          <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                          <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                          <div class="col-md-6"><label class="labels">State/Province</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                      </div>
+                      <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                  </div>
               </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4><?=$call[$_SESSION['language']]?></h4>
-                <p>+1 eFl-orist</p>
+              <div class="col-md-4">
+                  <div class="p-3 py-5">
+                      <div class="d-flex justify-content-between align-items-center experience"><span>Edit Password</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Confirm</span></div><br>
+                      <div class="col-md-12"><label class="labels">Enter new password</label><input type="text" class="form-control" placeholder="********" value=""></div> <br>
+                      <div class="col-md-12"><label class="labels">Confirm new password</label><input type="text" class="form-control" placeholder="********" value=""></div>
+                  </div>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.070666448763!2d151.24601251596695!3d-33.93931053015491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b23327945833%3A0x64573080384149c5!2s7%20Flower%20St%2C%20Maroubra%20NSW%202035%2C%20Australia!5e0!3m2!1sen!2sca!4v1621894638082!5m2!1sen!2sca" width="100%" height="290px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
         </div>

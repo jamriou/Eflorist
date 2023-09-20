@@ -30,6 +30,7 @@ $stmt = $pdo->prepare("SELECT first,last,password,isAdmin FROM dbo.accounts WHER
 $result = $stmt->execute([$email]);
 while($row = $stmt->fetch()){
    $first = $row['first'];
+   $last = $row['last'];
    $isAdmin = $row['isAdmin'];
    $resultHash = $row['password'];
 };
@@ -40,6 +41,7 @@ while($row = $stmt->fetch()){
 #redirects user
 session_start(); 
 $_SESSION['first'] = $first;
+$_SESSION['last'] = $last;
 $_SESSION['email'] = $email;
 $_SESSION['isAdmin'] = $isAdmin;
 $_SESSION['authenticated'] = true;
