@@ -9,7 +9,7 @@ $profile= array(
 );
 $profileDef= array(
     "en"=>"Change your personnal information here and view your orders!", 
-    "fr"=>"Changer vos coordonnés ici et visionners vos commandes!"
+    "fr"=>"Changer vos coordonnées ici et visionners vos commandes!"
 );
 
 $findUs= array(
