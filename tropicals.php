@@ -33,6 +33,7 @@ $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
 $_SESSION['successDeleteCacti'] = false;
 $_SESSION['successDeleteGarden'] = false;
+$_SESSION['successDeleteAquatic'] = false;
 
 $tropicalName = array();
 $tropicalDescription = array();

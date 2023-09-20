@@ -32,6 +32,7 @@ $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
 $_SESSION['successDeleteTropical'] = false;
 $_SESSION['successDeleteCacti'] = false;
+$_SESSION['successDeleteAquatic'] = false;
 
 $outdoorName = array();
 $outdoorDescription = array();

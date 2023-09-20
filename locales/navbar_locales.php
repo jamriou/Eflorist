@@ -14,6 +14,10 @@ $outdoors= array(
     "en"=>"Garden", 
     "fr"=>"Jardin"
 );
+$aquatics= array(
+    "en"=>"Aquatics", 
+    "fr"=>"Aquatiques"
+);
 $add= array(
     "en"=>"Add a plant", 
     "fr"=>"Ajouter une plante"

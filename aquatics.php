@@ -2,10 +2,10 @@
 session_start();
 include "./database_connection//connection_info.php";
 include "./database_connection//pdo_connect.php";
-include "locales/cacti_locales.php";
+include "locales/aquatics_locales.php";
 
 try {
-  $pdo = new PDO($dsn, $connectionId, $connectionPasswd, $options);
+  $pdo = new PDO($dsn, $connectionId, $connectionPasswd);
    } catch (Exception $e) {
      exit($e);
    }
@@ -13,9 +13,10 @@ try {
 if(!isset($_SESSION["language"])){
   $_SESSION["language"]= "en";
 }
-if(!isset($_SESSION["successDeleteCacti"])){
-  $_SESSION["successDeleteCacti"]= false;
+if(!isset($_SESSION["successDeleteAquatic"])){
+  $_SESSION["successDeleteAquatic"]= false;
 }
+
 
 if(isset($_SESSION['fromAddCartScript'])){
   if($_SESSION['fromAddCartScript']) {
@@ -30,23 +31,23 @@ if(isset($_SESSION['fromAddCartScript'])){
 
 $_SESSION['exists'] = false;
 $_SESSION['added'] = false;
-$_SESSION['successDeleteTropical'] = false;
+$_SESSION['successDeleteCacti'] = false;
+$_SESSION['successDeleteTropicals'] = false;
 $_SESSION['successDeleteGarden'] = false;
-$_SESSION['successDeleteAquatic'] = false;
 
-$cactiName = array();
-$cactiDescription = array();
-$cactiQuantity = array();
-$cactiPrice = array();
+$aquaticName = array();
+$aquaticDescription = array();
+$aquaticQuantity = array();
+$aquaticPrice = array();
 $totalPlants = 0;
 
-$stmt = $pdo->prepare("SELECT cactiName, cactiDescription, cactiQuantity, cactiPrice FROM dbo.cactis ORDER BY cactiName DESC");
+$stmt = $pdo->prepare("SELECT aquaticName, aquaticDescription, aquaticQuantity, aquaticPrice FROM dbo.aquatics ORDER BY aquaticName DESC");
 $result = $stmt->execute();
 while($row = $stmt->fetch()){
-    array_push($cactiName, $row['cactiName']);
-    array_push($cactiDescription, $row['cactiDescription']);
-    array_push($cactiQuantity, $row['cactiQuantity']);
-    array_push($cactiPrice, $row['cactiPrice']);
+    array_push($aquaticName, $row['aquaticName']);
+    array_push($aquaticDescription, $row['aquaticDescription']);
+    array_push($aquaticQuantity, $row['aquaticQuantity']);
+    array_push($aquaticPrice, $row['aquaticPrice']);
     $totalPlants = $totalPlants + 1; 
 };
   ?>
@@ -58,9 +59,10 @@ while($row = $stmt->fetch()){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>eFlorist - Cacti</title>
+  <title>eFlorist - Aquatics</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
   <meta http-equiv="Content-Security-Policy" 
       content="script-src 'self' https://apis.google.com">
 
@@ -81,10 +83,13 @@ while($row = $stmt->fetch()){
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
+</head>
+
 <body class="d-flex flex-column min-vh-100">
 
   <!-- ======= Header ======= -->
   <?php include "nav/navbar.php"; ?>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -92,11 +97,11 @@ while($row = $stmt->fetch()){
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1><?=$ourCacti[$_SESSION['language']]?></h1>
-          <h2><?=$ourCactiDef[$_SESSION['language']]?></h2>
+          <h1><?=$ourAquatics[$_SESSION['language']]?></h1>
+          <h2><?=$ourAquaticsDef[$_SESSION['language']]?></h2>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 justify-content-center" style="text-align:center;">
-          <img src="img/cactus.png" class="img-fluid" data-aos="zoom-out" width="200" height="200" data-aos-delay="100" alt="">
+        <div class="col-lg-6 order-1 order-lg-2" style="text-align:center;">
+          <img src="img/seaweed.png" class="img-fluid" data-aos="zoom-out" width="200" height="200" data-aos-delay="100" alt="">
         </div>
       </div>
     </div>
@@ -108,13 +113,13 @@ while($row = $stmt->fetch()){
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services" style="padding: 15px;">
       <div class="container">
-      <?php if($_SESSION['successDeleteCacti']) { ?>
-      <div class="alert alert-success">
-        <strong><?=$success[$_SESSION['language']]?></strong><?=$added[$_SESSION['language']]?>
-      </div>
-      <?php } ?>
-      <div class="row">
-      <?php
+        <?php if($_SESSION['successDeleteAquatic']) { ?>
+        <div class="alert alert-success">
+          <strong><?=$success[$_SESSION['language']]?></strong><?=$added[$_SESSION['language']]?>
+        </div>
+        <?php } ?>
+        <div class="row">
+        <?php
         $plant = 9;
 
         if(isset($_GET["page"])){
@@ -131,26 +136,21 @@ while($row = $stmt->fetch()){
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <img></img>
-              <h4 class="title"><?php echo strip_tags($cactiName[$i]) ?></h4>
-              <p class="description"><?php echo strip_tags($cactiDescription[$i]) ?></p>
-              <h4 class="title">$ <?php echo strip_tags($cactiPrice[$i]) ?></h4>
+              <h4 class="title"><?php echo strip_tags($aquaticName[$i]) ?></h4>
+              <p class="description"><?php echo strip_tags($aquaticDescription[$i]) ?></p>
+              <h4 class="title">$ <?php echo strip_tags($aquaticPrice[$i]) ?></h4>
               <?php 
-              if($cactiQuantity[$i] > 0) { ?>
-                <h4 class="title"><a href="scripts/addCart.php?name=<?=$cactiName[$i]?>&category=cacti"><?=$addToCart[$_SESSION['language']]?></a></h4>
+              if($aquaticQuantity[$i] > 0) { ?>
+                <h4 class="title"><a href="scripts/addCart.php?name=<?=$aquaticName[$i]?>&category=aquatics"><?=$addToCart[$_SESSION['language']]?></a></h4>
               <?php } else { ?>
                 <h4 class="titleRed"><p><?=$outOfStock[$_SESSION['language']]?></p></h4>
               <?php } 
               if($_SESSION['isAdmin']) {?>
-              <a href="manage.php?name=<?=$cactiName[$i]?>&category=cacti" class="manage scrollto"><?=$manage[$_SESSION['language']]?></a>
+              <a href="manage.php?name=<?=$aquaticName[$i]?>&category=aquatics" class="manage scrollto"><?=$manage[$_SESSION['language']]?></a>
               <?php } ?>
             </div>
           </div>
           <?php } ?>
-          <div class="col-lg-4 col-md-6">
-              <div class="icon-box">
-                <img src="img/cool-cool-plant.gif" class="img-fluid animated"  width="195" height="195" alt="">
-              </div>
-            </div>
         </div>
 
         <br>
@@ -159,9 +159,8 @@ while($row = $stmt->fetch()){
     </section><!-- End Featured Services Section -->
 
     <!-- Pagination section -->
-    <div class="row" style="padding-bottom: 25px">
+    <div class="row" style="padding-bottom: 25px;">
       <div class="container d-flex justify-content-center">
-
         <ul class="pagination my-auto mx-auto">
         <?php 
         $previous = $_GET["page"] - 1;
@@ -169,20 +168,20 @@ while($row = $stmt->fetch()){
           $previous = 1;
 
         $next = $_GET["page"] + 1;
-        if($_GET["page"] + 1 >= ceil(count($cactiName)/$plant)) 
-          $next = ceil(count($cactiName)/$plant);
+        if($_GET["page"] + 1 >= ceil(count($aquaticName)/$plant)) 
+          $next = ceil(count($aquaticName)/$plant);
         if($_GET["page"] > 1) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$previous'><<</a></li>";
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./aquatics.php?page=$previous'><<</a></li>";
 
-        for($i = 1; $i <= ceil(count($cactiName)/$plant); $i++){   
+        for($i = 1; $i <= ceil(count($aquaticName)/$plant); $i++){   
           $active = "";
           if(($_GET["page"] == $i)) 
             $active = "active";
-          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./cacti.php?page=$i'>$i</a></li>";
+          echo "<li class=\"page-item $active\"><a class=\"page-link\" href='./aquatics.php?page=$i'>$i</a></li>";
         } 
 
-        if($_GET["page"] == ceil(count($cactiName)/$plant) -1 ) 
-          echo "<li class=\"page-item\"><a class=\"page-link\" href='./cacti.php?page=$next'>>></a></li>";
+        if($_GET["page"] == ceil(count($aquaticName)/$plant) -1 ) 
+          echo "<li class=\"page-item\"><a class=\"page-link\" href='./aquatics.php?page=$next'>>></a></li>";
         ?>
         </ul>
         </br>

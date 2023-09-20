@@ -29,6 +29,7 @@ if(!isset($_SESSION['authenticated'])){
       <li><a href="tropicals.php?page=1"><?=$tropicals[$_SESSION['language']]?></a></li>
       <li><a href="cacti.php?page=1"><?=$cacti[$_SESSION['language']]?></a></li>
       <li><a href="outdoors.php?page=1"><?=$outdoors[$_SESSION['language']]?></a></li>
+      <li><a href="aquatics.php"><?=$aquatics[$_SESSION['language']]?></a></li>   
       <li><a href="cart.php"><?=$cart[$_SESSION['language']]?></a></li>   
       <li>   
       <?php 
