@@ -137,7 +137,11 @@ $paymentDescription= array(
     "fr"=>"Nous acceptons toutes les principales formes de paiement, y compris Visa, Mastercard et Paypal!"
 );
 $ready= array(
-    "en"=>"Ready to start shopping our best-sellers?", 
-    "fr"=>"Prêt à magasiner nos meilleur vendeurs?"
+    "en"=>"Are you ready to start shopping our best-sellers?", 
+    "fr"=>"Êtes-vous prêt à magasiner nos meilleur vendeurs?"
+);
+$so= array(
+    "en"=>"So", 
+    "fr"=>"Dites"
 );
 ?>

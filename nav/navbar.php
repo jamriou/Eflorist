@@ -37,6 +37,7 @@ if(!isset($_SESSION['authenticated'])){
         <a href="login.php"><?=$login[$_SESSION['language']]?></a>
         <?php }
         if(isset($_SESSION['authenticated'])) {?>
+        <a href="profile.php"><?=$profile[$_SESSION['language']]?></a>
         <a href="scripts/logout.php"><?=$logout[$_SESSION['language']]?></a>
       <?php } ?>
       </li>
