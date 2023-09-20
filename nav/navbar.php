@@ -20,7 +20,7 @@ if(!isset($_SESSION['authenticated'])){
     <ul>
       <?php 
         if(isset($_SESSION['authenticated'])) {?>
-        <li><a href="#"><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</a></li>
+        <li><a href="index.php"><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</a></li>
         <?php }
         if($_SESSION['isAdmin']){?>
         <li><a href="add.php"><?=$add[$_SESSION['language']]?></a></li>
@@ -37,6 +37,7 @@ if(!isset($_SESSION['authenticated'])){
         <a href="login.php"><?=$login[$_SESSION['language']]?></a>
         <?php }
         if(isset($_SESSION['authenticated'])) {?>
+        <a href="profile.php"><?=$profile[$_SESSION['language']]?></a>
         <a href="scripts/logout.php"><?=$logout[$_SESSION['language']]?></a>
       <?php } ?>
       </li>

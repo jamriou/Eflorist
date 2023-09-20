@@ -38,4 +38,8 @@ $welcome= array(
     "en"=>"Welcome", 
     "fr"=>"Bienvenue"
 );
+$profile= array(
+    "en"=>"Your profile", 
+    "fr"=>"Votre profile"
+);
 ?>

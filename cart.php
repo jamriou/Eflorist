@@ -20,7 +20,9 @@ if(!isset($_SESSION["email"])){
   $_SESSION["email"] = null;
 }
 $email = $_SESSION['email'];
-
+if(!isset($_SESSION["authenticated"])){
+  $_SESSION["authenticated"] = false;
+}
 
 
 $_SESSION['exists'] = false;
@@ -37,19 +39,22 @@ while($row = $stmt->fetch()){
     array_push($category, $row['category']);
 };
 
-if(time()-$_SESSION['timeOut'] > 3000) 
-{ 
-  $lang = $_SESSION['language'];
-  session_unset(); 
-  session_destroy(); 
+if($_SESSION['authenticated']) {
+  if(time()-$_SESSION['timeOut'] > 3000) 
+  { 
+    $lang = $_SESSION['language'];
+    session_unset(); 
+    session_destroy(); 
+  ?>
+    <script type="text/javascript">
+    alert("<?=$loginAgain[$lang]?>");
+    window.location.href = "login.php";
+    </script>
+    <?php
+  } 
+}
 ?>
-  <script type="text/javascript">
-  alert("<?=$loginAgain[$lang]?>");
-  window.location.href = "login.php";
-  </script>
-  <?php
-} 
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">

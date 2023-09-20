@@ -53,7 +53,12 @@ $_SESSION['added'] = false;
     <div class="container position-relative">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+        <?php 
+          if(isset($_SESSION['authenticated'])) {?>
+          <h2><?=$welcomeTo[$_SESSION['language']]?><span>eFlorist</span>, <?=$_SESSION['first']?>!</h2>
+          <?php } else { ?>
           <h2><?=$welcomeTo[$_SESSION['language']]?><span>eFlorist</span></h2>
+          <?php } ?>
           <p><?=$welcomeMessage[$_SESSION['language']]?></p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="tropicals.php?page=1" class="btn-get-started"><?=$popularPlants[$_SESSION['language']]?></a>
@@ -116,7 +121,7 @@ $_SESSION['added'] = false;
           <h2><?=$h1UnderTitle[$_SESSION['language']]?></h2>
           <?php }
           if(isset($_SESSION['authenticated'])) {?>
-          <h1><?=$welcome[$_SESSION['language']]?>, <?=$_SESSION['first']?>!</h1>
+          <h1><?=$so[$_SESSION['language']]?> <?=$_SESSION['first']?>,</h1>
           <h2><?=$ready[$_SESSION['language']]?></h2>
           <?php } ?>
         </div>

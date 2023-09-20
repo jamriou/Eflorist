@@ -101,7 +101,7 @@ $freezing= array(
     "fr"=>"Protection contre le gel "
 );
 $freezingDescription= array(
-    "en"=>"Every plant is shipped in a thermal protection box, so no plant will every catch a cold!", 
+    "en"=>"Every plant is shipped in a thermal protection box, so no plant will ever catch a cold!", 
     "fr"=>"Chaque plante est expédiée dans une boîte de protection thermique, donc aucune plante n'attrapera froid!"
 );
 $shop= array(
@@ -117,7 +117,7 @@ $garanty= array(
     "fr"=>"Garantie argent remise"
 );
 $garantyDescription= array(
-    "en"=>"Received a plant in bad shape? Don't worry! We offer a money-back garanty if you plant arrives damaged", 
+    "en"=>"Received a plant in bad shape? Don't worry! We offer a money-back garanty if your plant arrives damaged", 
     "fr"=>"Vous avez reçu une plante en mauvais état ? Ne vous inquiètez pas! Nous offrons une garantie de remboursement si votre plante arrive endommagée "
 );
 $globe= array(
@@ -125,7 +125,7 @@ $globe= array(
     "fr"=>"Diversité mondiale"
 );
 $globeDescription= array(
-    "en"=>"We offre a variety of plantes that originate from all over the world, get collecting!", 
+    "en"=>"We offer a variety of plants that originate from all over the world, get collecting!", 
     "fr"=>"Nous proposons une variété de plantes originaires du monde entier, collectionnez-les !"
 );
 $payment= array(
@@ -137,7 +137,11 @@ $paymentDescription= array(
     "fr"=>"Nous acceptons toutes les principales formes de paiement, y compris Visa, Mastercard et Paypal!"
 );
 $ready= array(
-    "en"=>"Ready to start shopping our best-sellers?", 
-    "fr"=>"Prêt à magasiner nos meilleur vendeurs?"
+    "en"=>"Are you ready to start shopping our best-sellers?", 
+    "fr"=>"Êtes-vous prêt à magasiner nos meilleur vendeurs?"
+);
+$so= array(
+    "en"=>"So", 
+    "fr"=>"Dites"
 );
 ?>
