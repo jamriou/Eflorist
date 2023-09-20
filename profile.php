@@ -68,7 +68,7 @@ $country = $_SESSION['country'];
           <div class="row">
               <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                  <img class="rounded-circle mt-5" width="150px" src="img/user.png">
                   <span class="font-weight-bold"><?=$first?> <?=$last?></span>
                   <span class="text-black-50"><?=$email?></span>
                   <span class="text-black-50"><?=$street?></span>
@@ -108,8 +108,8 @@ $country = $_SESSION['country'];
                         <span>Edit Password</span>
                         <button class="btn btn-primary profile-button" type="button">Confirm</button>
                       </div><br>
-                      <div class="col-md-12"><label class="labels">Enter new password</label><input type="text" class="form-control" placeholder="********" value=""></div> <br>
-                      <div class="col-md-12"><label class="labels">Confirm new password</label><input type="text" class="form-control" placeholder="********" value=""></div>
+                      <div class="col-md-12"><label class="labels">Enter new password</label><input type="text" class="form-control" placeholder="********" value="" disabled></div> <br>
+                      <div class="col-md-12"><label class="labels">Confirm new password</label><input type="text" class="form-control" placeholder="********" value="" disabled></div>
                   </div>
               </div>
             </div>
