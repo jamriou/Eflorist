@@ -94,8 +94,8 @@ while($row = $stmt->fetch()){
           <h1><?=$ourCacti[$_SESSION['language']]?></h1>
           <h2><?=$ourCactiDef[$_SESSION['language']]?></h2>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="img/cacti.jpg" class="img-fluid animated" alt="">
+        <div class="col-lg-6 order-1 order-lg-2 justify-content-center" style="text-align:center;">
+          <img src="img/cactus.png" class="img-fluid" data-aos="zoom-out" width="200" height="200" data-aos-delay="100" alt="">
         </div>
       </div>
     </div>
