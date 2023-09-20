@@ -10,15 +10,22 @@ include "locales/signup_locales.php";
 ?>
 
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <link href="css/LoginSignupCSS.css" rel="stylesheet">
-    <title>eFlorist - <?=$signup[$_SESSION['language']]?></title>
-    <link href="img/favicon.ico" rel="icon">
+   <title>eFlorist - <?=$signup[$_SESSION['language']]?></title>
+   <link href="img/favicon.ico" rel="icon">
+   <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta http-equiv="Content-Security-Policy" 
+      content="script-src 'self' https://apis.google.com">
+
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!------ Include the above in your HEAD tag ---------->
+
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
       <!-- Vendor CSS Files -->
   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -31,7 +38,7 @@ include "locales/signup_locales.php";
 
   <!-- Template Main CSS File -->
   <link href="css/index.css" rel="stylesheet">
-  <link href="css/profile.css" rel="stylesheet">
+  <link href="css/LoginSignupCSS.css" rel="stylesheet">
 
 </head>
 
