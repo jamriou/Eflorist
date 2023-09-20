@@ -18,11 +18,7 @@ $pdo = new PDO($dsn, $connectionId, $connectionPasswd, $options);
  }
 
  if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
-}
-
-if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 
 if(time()-$_SESSION['timeOut'] > 1000) 

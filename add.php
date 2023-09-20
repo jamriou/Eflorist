@@ -9,7 +9,7 @@ if($_SESSION['isAdmin'] == false) {
 }
 
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 
 if(time()-$_SESSION['timeOut'] > 3000) 

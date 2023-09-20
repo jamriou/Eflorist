@@ -11,7 +11,7 @@ try {
    }
   
 if(!isset($_SESSION["language"])){
-  $_SESSION["language"]= "en";
+  $_SESSION["language"]= "fr";
 }
 if(!isset($_SESSION["checkedOut"])){
   $_SESSION["checkedOut"]= false;

@@ -10,6 +10,10 @@ $city = $_SESSION['city'];
 $postCode = $_SESSION['postCode'];
 $state = $_SESSION['state'];
 $country = $_SESSION['country'];
+
+if(!isset($_SESSION["language"])){
+  $_SESSION["language"]= "fr";
+}
 ?>
 
 <!DOCTYPE html>
