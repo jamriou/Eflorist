@@ -26,13 +26,18 @@ window.location.href = "../login.php";
 }else{
 
 #verifies hash from database with given password (SQL injection secured)
-$stmt = $pdo->prepare("SELECT first,last,password,isAdmin FROM dbo.accounts WHERE email=?");
+$stmt = $pdo->prepare("SELECT first,last,password,isAdmin,street,city,state,country,postCode FROM dbo.accounts WHERE email=?");
 $result = $stmt->execute([$email]);
 while($row = $stmt->fetch()){
    $first = $row['first'];
    $last = $row['last'];
    $isAdmin = $row['isAdmin'];
    $resultHash = $row['password'];
+   $street = $row['street'];
+   $city = $row['city'];
+   $postCode = $row['postCode'];
+   $state = $row['state'];
+   $country = $row['country'];
 };
 
 #checks if hash was identical (right password)
@@ -44,6 +49,11 @@ $_SESSION['first'] = $first;
 $_SESSION['last'] = $last;
 $_SESSION['email'] = $email;
 $_SESSION['isAdmin'] = $isAdmin;
+$_SESSION['street'] = $street;
+$_SESSION['city'] = $city;
+$_SESSION['postCode'] = $postCode;
+$_SESSION['state'] = $state;
+$_SESSION['country'] = $country;
 $_SESSION['authenticated'] = true;
 $_SESSION['timeOut'] = time();
 header("Location: ../index.php");
