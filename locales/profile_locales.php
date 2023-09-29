@@ -84,4 +84,8 @@ $notAvailable = array(
     "en"=>"Not available",
     "fr"=>"Non disponible"
 );
+$profile = array(
+    "en"=>"Profile",
+    "fr"=>"Profil"
+);
 ?>
