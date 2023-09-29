@@ -1,14 +1,14 @@
 <?php
 $first = array("en"=>"First Name :","fr"=>"Prénom :");
-$firstPH = array("en"=>"Enter first name :","fr"=>"Entrer votre prénom :");
+$firstPH = array("en"=>"Enter first name","fr"=>"Entrer votre prénom");
 $last = array("en"=>"Last name :","fr"=>"Nom de famille :");
-$lastPH = array("en"=>"Enter last name :","fr"=>"Entrer votre nom de famille:");
+$lastPH = array("en"=>"Enter last name","fr"=>"Entrer votre nom de famille");
 
-$email = array("en"=>"Email adress :","fr"=>"Adresse courriel :");
+$email = array("en"=>"Email address :","fr"=>"Adresse courriel :");
 $emailPH = array("en"=>"Enter email","fr"=>"Entrer votre courriel");
 $password = array("en"=>"Password :","fr"=>"Mot de passe :");
 $passwordPH = array("en"=>"********","fr"=>"********");
-$submit = array("en"=>"Start planting!","fr"=>"Soumettre");
+$submit = array("en"=>"Signup","fr"=>"S'inscrire");
 $signup = array("en"=>"Signup","fr"=>"Inscription");
 $or = array("en"=>"or","fr"=>"ou");
 $alreadyExists = array("en"=>"There is already an account with this email, try logging in instead.","fr"=>"Il existe déjà un compte avec cet e-mail, essayez de vous connecter à la place.");
