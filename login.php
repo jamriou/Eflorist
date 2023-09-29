@@ -37,14 +37,15 @@ include "./locales/login_locales.php";
    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
    <!-- Template Main CSS File -->
-   <link href="css/index.css" rel="stylesheet">
    <link href="css/LoginSignupCSS.css" rel="stylesheet">
+   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <body class="d-flex flex-column min-vh-100">
-   <div class="container">
+   <?php include "nav/navbar.php"; ?>
+   <div class="container login">
       <div class="row">
 			<div class="col-md-5 mx-auto">
 				<div class="myform form ">
