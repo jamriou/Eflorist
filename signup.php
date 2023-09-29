@@ -71,7 +71,7 @@ include "locales/signup_locales.php";
                         <input type="password" name="password" id="password"  class="form-control" maxlength="50" aria-describedby="emailHelp" placeholder="<?=$passwordPH[$_SESSION['language']]?>">
                      </div>
                      <div class="form-group">
-                        <p class="text-center"><?=$accept[$_SESSION['language']]?> <a href="#"><?=$terms[$_SESSION['language']]?></a></p>
+                        <p class="text-center"><?=$accept[$_SESSION['language']]?> <a href="termsandconditions.php"><?=$terms[$_SESSION['language']]?></a></p>
                      </div>
                      <div class="col-md-12 text-center mb-3">
                         <button type="submit" class=" btn btn-block login-btn btn-primary"><?=$submit[$_SESSION['language']]?></button>
