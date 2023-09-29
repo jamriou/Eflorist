@@ -20,9 +20,6 @@ if(!isset($_SESSION["email"])){
   $_SESSION["email"] = null;
 }
 $email = $_SESSION['email'];
-if(!isset($_SESSION["authenticated"])){
-  $_SESSION["authenticated"] = false;
-}
 
 
 $_SESSION['exists'] = false;
@@ -39,7 +36,7 @@ while($row = $stmt->fetch()){
     array_push($category, $row['category']);
 };
 
-if($_SESSION['authenticated']) {
+if(isset($_SESSION['authenticated'])) {
   if(time()-$_SESSION['timeOut'] > 3000) 
   { 
     $lang = $_SESSION['language'];
@@ -52,7 +49,7 @@ if($_SESSION['authenticated']) {
     </script>
     <?php
   } 
-}
+};
 ?>
 
 

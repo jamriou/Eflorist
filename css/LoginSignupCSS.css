@@ -19,13 +19,13 @@
 }
 .login-btn {
   border-radius: 50px;
-  border-color: #16df7e;
-  background: #16df7e;
+  border-color: #6ad83f;
+  background: #6ad83f;
 }
 
 .login-btn:hover {
-  border-color: #16df7e;
-  background: #16df7e;
+  border-color: #15c015;
+  background: #15c015;
   box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
 }
 
@@ -65,4 +65,12 @@ form .error {
 }
 #second {
   display: none;
+}
+
+/*--------------------------------------------------------------
+# Login/Signup
+--------------------------------------------------------------*/
+
+.login {
+  padding-top: 100px;
 }

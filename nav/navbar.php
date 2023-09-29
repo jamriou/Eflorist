@@ -33,7 +33,7 @@ if(!isset($_SESSION['authenticated'])){
       <li><a href="cart.php"><?=$cart[$_SESSION['language']]?></a></li>    
       <?php 
         if(!isset($_SESSION['authenticated'])) {?>
-        <a href="login.php"><?=$login[$_SESSION['language']]?></a>
+        <li><a href="login.php"><?=$login[$_SESSION['language']]?></a></li>
         <?php }
         if(isset($_SESSION['authenticated'])) {?>
         <li><a href="profile.php"><?=$profile[$_SESSION['language']]?></a></li>

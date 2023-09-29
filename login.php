@@ -27,24 +27,25 @@ include "./locales/login_locales.php";
    <title>eFlorist - <?=$login[$_SESSION['language']]?></title>
    <link href="img/favicon.ico" rel="icon">
 
-   <!-- Vendor CSS Files -->
-   <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-   <link href="vendor/aos/aos.css" rel="stylesheet">
-   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
    <!-- Template Main CSS File -->
-   <link href="css/index.css" rel="stylesheet">
    <link href="css/LoginSignupCSS.css" rel="stylesheet">
+   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <body class="d-flex flex-column min-vh-100">
-   <div class="container">
+   <?php include "nav/navbar.php"; ?>
+   <div class="container login">
       <div class="row">
 			<div class="col-md-5 mx-auto">
 				<div class="myform form ">
@@ -83,4 +84,17 @@ include "./locales/login_locales.php";
    <footer class="footer" id="footer">
       <?php include "nav/footer.php"; ?>
    </footer><!-- End Footer -->  
+   
+   <div id="preloader"></div>
+
+   <!-- Main Scripts -->
+   <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+   <script src="vendor/aos/aos.js"></script>
+   <script src="vendor/glightbox/js/glightbox.min.js"></script>
+   <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+   <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+   <!-- Template Main JS File -->
+   <script src="js/main.js" type="text/javascript"></script>
 </body>
